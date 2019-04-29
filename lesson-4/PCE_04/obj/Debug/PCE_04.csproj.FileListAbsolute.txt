@@ -1,0 +1,14 @@
+C:\MikesStuff\Pers\Dropbox\Work\Website\Courses\BIT142\Lessons\Lesson_04\PCEs\PCE_04\PCE_04\bin\Debug\PCE_02.exe.config
+C:\MikesStuff\Pers\Dropbox\Work\Website\Courses\BIT142\Lessons\Lesson_04\PCEs\PCE_04\PCE_04\bin\Debug\PCE_02.exe
+C:\MikesStuff\Pers\Dropbox\Work\Website\Courses\BIT142\Lessons\Lesson_04\PCEs\PCE_04\PCE_04\bin\Debug\PCE_02.pdb
+C:\MikesStuff\Pers\Dropbox\Work\Website\Courses\BIT142\Lessons\Lesson_04\PCEs\PCE_04\PCE_04\obj\Debug\PCE_04.csprojAssemblyReference.cache
+C:\MikesStuff\Pers\Dropbox\Work\Website\Courses\BIT142\Lessons\Lesson_04\PCEs\PCE_04\PCE_04\obj\Debug\PCE_04.csproj.CoreCompileInputs.cache
+C:\MikesStuff\Pers\Dropbox\Work\Website\Courses\BIT142\Lessons\Lesson_04\PCEs\PCE_04\PCE_04\obj\Debug\PCE_02.exe
+C:\MikesStuff\Pers\Dropbox\Work\Website\Courses\BIT142\Lessons\Lesson_04\PCEs\PCE_04\PCE_04\obj\Debug\PCE_02.pdb
+C:\Users\anon\Desktop\bit-142\lesson-4\PCE_04\bin\Debug\PCE_02.exe.config
+C:\Users\anon\Desktop\bit-142\lesson-4\PCE_04\bin\Debug\PCE_02.exe
+C:\Users\anon\Desktop\bit-142\lesson-4\PCE_04\bin\Debug\PCE_02.pdb
+C:\Users\anon\Desktop\bit-142\lesson-4\PCE_04\obj\Debug\PCE_04.csprojAssemblyReference.cache
+C:\Users\anon\Desktop\bit-142\lesson-4\PCE_04\obj\Debug\PCE_04.csproj.CoreCompileInputs.cache
+C:\Users\anon\Desktop\bit-142\lesson-4\PCE_04\obj\Debug\PCE_02.exe
+C:\Users\anon\Desktop\bit-142\lesson-4\PCE_04\obj\Debug\PCE_02.pdb
