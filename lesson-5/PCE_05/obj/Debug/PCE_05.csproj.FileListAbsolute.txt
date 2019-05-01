@@ -1,0 +1,7 @@
+C:\MikesStuff\Pers\Dropbox\Work\Website\Courses\BIT142\Lessons\Lesson_05\PCEs\PCE_05\PCE_05\bin\Debug\PCE_02.exe
+C:\MikesStuff\Pers\Dropbox\Work\Website\Courses\BIT142\Lessons\Lesson_05\PCEs\PCE_05\PCE_05\bin\Debug\PCE_02.pdb
+C:\MikesStuff\Pers\Dropbox\Work\Website\Courses\BIT142\Lessons\Lesson_05\PCEs\PCE_05\PCE_05\obj\Debug\PCE_05.csprojAssemblyReference.cache
+C:\MikesStuff\Pers\Dropbox\Work\Website\Courses\BIT142\Lessons\Lesson_05\PCEs\PCE_05\PCE_05\obj\Debug\PCE_05.csproj.CoreCompileInputs.cache
+C:\MikesStuff\Pers\Dropbox\Work\Website\Courses\BIT142\Lessons\Lesson_05\PCEs\PCE_05\PCE_05\obj\Debug\PCE_02.exe
+C:\MikesStuff\Pers\Dropbox\Work\Website\Courses\BIT142\Lessons\Lesson_05\PCEs\PCE_05\PCE_05\obj\Debug\PCE_02.pdb
+C:\MikesStuff\Pers\Dropbox\Work\Website\Courses\BIT142\Lessons\Lesson_05\PCEs\PCE_05\PCE_05\bin\Debug\PCE_02.exe.config
