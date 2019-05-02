@@ -8,8 +8,8 @@
     <ProjectGuid>{173CA7AF-BED8-49C8-A018-93A7394A4B52}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PCE_02</RootNamespace>
-    <AssemblyName>PCE_02</AssemblyName>
+    <RootNamespace>PCE_05</RootNamespace>
+    <AssemblyName>PCE_05</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>

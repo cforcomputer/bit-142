@@ -41,10 +41,19 @@ namespace PCE_StarterProject
     {
         public void RunExercise()
         {
+            Toaster burntToast = new Toaster();
+            Console.WriteLine(burntToast);
         }
     }
     // You should define the Toaster class (and it's Print() method) in the space below //
     //////////////////////////////////////////////////////////////////////////////////////
+    class Toaster
+    {
+        public void Print()
+        {
+            Console.WriteLine("Hello, World, from the Instance Method Exercise!");
+        }
+    }
 
     //////////////////////////////////////////////////////////////////////////////////////
     // You should define the Toaster class (and it's Print() method) in the space above //
