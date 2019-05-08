@@ -1,2 +1,2 @@
 # bit-142
-Do good this time, for me fam.
+Material for introductory course for C# at Cascadia College.
