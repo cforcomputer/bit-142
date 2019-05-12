@@ -1,0 +1,9 @@
+C:\Users\anon\Desktop\bit-142\assign-2\A2_MyDate_NoLeap_NoObjParams_VS_2017_NUnit_3_0\bin\Debug\NUnitTest.exe.config
+C:\Users\anon\Desktop\bit-142\assign-2\A2_MyDate_NoLeap_NoObjParams_VS_2017_NUnit_3_0\bin\Debug\NUnitTest.exe
+C:\Users\anon\Desktop\bit-142\assign-2\A2_MyDate_NoLeap_NoObjParams_VS_2017_NUnit_3_0\bin\Debug\NUnitTest.pdb
+C:\Users\anon\Desktop\bit-142\assign-2\A2_MyDate_NoLeap_NoObjParams_VS_2017_NUnit_3_0\bin\Debug\MyDate_INSTRUCTOR_SOLUTION.dll
+C:\Users\anon\Desktop\bit-142\assign-2\A2_MyDate_NoLeap_NoObjParams_VS_2017_NUnit_3_0\obj\Debug\A2_MyDate_NoLeapYears_VS_2017_NUnit_3_0.csprojAssemblyReference.cache
+C:\Users\anon\Desktop\bit-142\assign-2\A2_MyDate_NoLeap_NoObjParams_VS_2017_NUnit_3_0\obj\Debug\A2_MyDate_NoLeapYears_VS_2017_NUnit_3_0.csproj.CoreCompileInputs.cache
+C:\Users\anon\Desktop\bit-142\assign-2\A2_MyDate_NoLeap_NoObjParams_VS_2017_NUnit_3_0\obj\Debug\A2_MyDate_NoLeapYears_VS_2017_NUnit_3_0.csproj.CopyComplete
+C:\Users\anon\Desktop\bit-142\assign-2\A2_MyDate_NoLeap_NoObjParams_VS_2017_NUnit_3_0\obj\Debug\NUnitTest.exe
+C:\Users\anon\Desktop\bit-142\assign-2\A2_MyDate_NoLeap_NoObjParams_VS_2017_NUnit_3_0\obj\Debug\NUnitTest.pdb

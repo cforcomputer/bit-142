@@ -20,10 +20,16 @@ namespace A3_Date
             int bdayDay;
 
             Console.WriteLine("What is today's month?");
+            todayMonth = Convert.ToInt32(Console.ReadLine());
+
             Console.WriteLine("What is today's day?");
+            todayDay = Convert.ToInt32(Console.ReadLine());
+
 
             // REMEMBER TO TEST OUT YOUR CODE WITH _BOTH_ THE INSTRUCTOR'S
             // VERSION _AND_ YOUR VERSION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            Console.WriteLine("Please enter the day of your birthday");
+            Console.WriteLine("Please enter the month of your birthday");
             // (there are more details at the top of this file)
 
             TestMyDate(); // this jumps down to the 'TestMyDate' method, below:
@@ -44,6 +50,7 @@ namespace A3_Date
 
             Console.WriteLine("Test the The MyDate() constructor (the one with no parameters)");
             MyDate testObject = new MyDate();
+
             if (testObject.getDay() == 1)
                 Console.WriteLine("\tTEST PASSED: new MyDate() correctly stored '1' for the day");
             else
@@ -61,8 +68,10 @@ namespace A3_Date
             }
 
             Console.WriteLine("Now test The MyDate(3,2) constructor (the one with two parameters)");
+
             // change the testObject variable to now refer to a new object:
             testObject = new MyDate(3, 2);
+
             if (testObject.getDay() == 2)
                 Console.WriteLine("\tTEST PASSED: new MyDate(3, 2) correctly stored '2' for the day");
             else
@@ -84,6 +93,7 @@ namespace A3_Date
             // Because the month (22) is out of range, the month should be set to 1
             // Because the day (33) is out of range _for_January, the day should be set to 1
             testObject = new MyDate(22, 33);
+
             if (testObject.getDay() == 1)
                 Console.WriteLine("\tTEST PASSED: new MyDate(22, 33) correctly stored '1' for the day");
             else
@@ -106,6 +116,7 @@ namespace A3_Date
             // Because the month (22) is out of range, the month should be set to 1
             // Because the day (14) is out of range _for_January, the day should be set to 14
             testObject = new MyDate(22, 14);
+
             if (testObject.getDay() == 14)
                 Console.WriteLine("\tTEST PASSED: new MyDate(22, 14) correctly stored '14' for the day");
             else
@@ -127,6 +138,7 @@ namespace A3_Date
             // Because the month (6) is in range, the month should be set to 6
             // Because the day (31) is out of range _for_June_, the day should be set to 1
             testObject = new MyDate(6, 31);
+
             if (testObject.getDay() == 1)
                 Console.WriteLine("\tTEST PASSED: new MyDate(6, 31) correctly stored '1' for the day");
             else
@@ -153,6 +165,7 @@ namespace A3_Date
             // This should set the date to August (month 8) 12th
             testObject = new MyDate(); // start with a fresh object
             testObject.setDate(8, 12);
+
             if (testObject.getDay() == 12)
                 Console.WriteLine("\tTEST PASSED: testObject.setDate(8, 12) correctly copied '12' for the day");
             else
@@ -196,6 +209,7 @@ namespace A3_Date
             // -10 isn't a valid day, so it should set the day to 1
             testObject = new MyDate(); // start with a fresh object
             testObject.setDate(-1, -10);
+
             if (testObject.getDay() == 1)
                 Console.WriteLine("\tTEST PASSED: testObject.setDate(-1, -10) correctly set '1' for the day");
             else
