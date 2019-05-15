@@ -9,30 +9,62 @@ namespace A3_Date
 {
     class Birthday
     {
+
+        // static MyDate dateCheck = new MyDate();
         static void Main(string[] args)
-        {
-            MyDate today;
-            int todayMonth;
-            int todayDay;
-
-            MyDate bday;
-            int bdayMonth;
-            int bdayDay;
-
+        {            
+            // Record month and then day
             Console.WriteLine("What is today's month?");
-            todayMonth = Convert.ToInt32(Console.ReadLine());
-
+            int todayMonth = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("What is today's day?");
-            todayDay = Convert.ToInt32(Console.ReadLine());
+            int todayDay = Convert.ToInt32(Console.ReadLine());
 
-
-            // REMEMBER TO TEST OUT YOUR CODE WITH _BOTH_ THE INSTRUCTOR'S
-            // VERSION _AND_ YOUR VERSION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            Console.WriteLine("Please enter the day of your birthday");
+            // Record burthday month and then day
             Console.WriteLine("Please enter the month of your birthday");
-            // (there are more details at the top of this file)
+            int bDayMonth = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter the day of your birthday");
+            int bDayDay = Convert.ToInt32(Console.ReadLine());
 
-            TestMyDate(); // this jumps down to the 'TestMyDate' method, below:
+
+            // Start calling classes from MyDate.cs
+            MyDate importer = new MyDate(todayMonth, todayDay);
+            importer.setDate(todayMonth, todayDay);                     
+            
+            MyDate birthday = new MyDate();
+            birthday.setDate(bDayMonth, bDayDay);
+                       
+            // Print days in specific month
+            Console.WriteLine("There are {0} days in month #{1}", birthday.daysInMonth(), birthday.getMonth());
+
+            int counterMonth = todayMonth;
+            int counterDay = 0;
+
+            if (importer.equals(bDayMonth, bDayDay))
+            {
+                Console.WriteLine("Happy Birthday!");
+            }
+            else
+            {             
+                importer.nextDay();
+
+                while (counterMonth != bDayMonth)
+                {
+
+                    if (counterMonth > 12)
+                    {
+                        //importer.nextDay();
+                        counterMonth = 0;                        
+                    }
+                    
+                    counterDay += importer.daysInMonth();
+                    counterMonth++;
+                    Console.WriteLine(counterMonth + "out");
+                }                
+                counterDay += (birthday.getDay() - importer.getDay());
+                // Print number of days until birthday
+                Console.WriteLine("Number of days until birthday {0}: {1}", birthday.toString(), counterDay);
+            }            
+            // TestMyDate(); // this jumps down to the 'TestMyDate' method, below:
         }
 
         public static void TestMyDate()
