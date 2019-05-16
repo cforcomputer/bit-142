@@ -1,0 +1,6 @@
+C:\Users\anon\Desktop\bit-142\assign-1\Console_StarterProject\bin\Debug\QuizProgram.exe
+C:\Users\anon\Desktop\bit-142\assign-1\Console_StarterProject\bin\Debug\QuizProgram.pdb
+C:\Users\anon\Desktop\bit-142\assign-1\Console_StarterProject\obj\Debug\QuizProgram.csprojAssemblyReference.cache
+C:\Users\anon\Desktop\bit-142\assign-1\Console_StarterProject\obj\Debug\QuizProgram.csproj.CoreCompileInputs.cache
+C:\Users\anon\Desktop\bit-142\assign-1\Console_StarterProject\obj\Debug\QuizProgram.exe
+C:\Users\anon\Desktop\bit-142\assign-1\Console_StarterProject\obj\Debug\QuizProgram.pdb

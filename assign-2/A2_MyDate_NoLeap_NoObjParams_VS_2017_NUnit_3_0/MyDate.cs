@@ -105,7 +105,7 @@ namespace MyDate_StudentWork
                 this.myDateDay = 1;
             }
             // Year end check
-            else if ((this.myDateDay == this.daysInMonth()) && (this.myDateMonth == 12))
+            else if ((this.myDateMonth == 12) && (this.myDateDay == this.daysInMonth()))
             {
                 // reset month and day to 1 to start a new year
                 this.myDateMonth = 1;
