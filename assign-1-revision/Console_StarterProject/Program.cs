@@ -300,99 +300,229 @@ namespace QuizProgram
 
                 // STUDENTS: YOUR SOLUTION USING 'IF STATEMENTS' SHOULD START HERE  //
                 // If the user selects the first option for modulo
-                if (userChoiceOperator == 1)
-                {
-                    A = rand.Next(minA, maxA);
-                    B = rand.Next(minB, maxB);
-                    answer = (A % B);
+                //if (userChoiceOperator == 1)
+                //{
+                //    //A = rand.Next(minA, maxA);
+                //    //B = rand.Next(minB, maxB);
+                //    //    for (int iQuiz = 0; iQuiz < numTimesToQuiz; iQuiz++) is where the random numbers are already defined
+                //    // it is unnecessary to attempt and define them a second time.
 
-                    //Query user regarding the randomly generated result
-                    Console.WriteLine("What is the result of {0} % {1}?", A, B);
+                //    answer = (A % B);
+
+                //    // Query user regarding the randomly generated result
+                //    Console.WriteLine("What is the result of {0} % {1}?", A, B);
                     
-                    // Get response from the user
-                    usersAnswer = Convert.ToInt32(Console.ReadLine());
-                }
-                // Do this if the user option is incorrect.
-                if (usersAnswer != answer && userChoiceOperator == 1)
-                {
-                    // Print what the actual option was
-                    Console.WriteLine("Good try, but no: {0} % {1} = {2}", A, B, answer);
-                }
+                //    // Get response from the user
+                //    usersAnswer = Convert.ToInt32(Console.ReadLine());
 
-                // STUDENTS: YOUR SOLUTION USING 'IF STATEMENTS' SHOULD END HERE  //
-                // STUDENTS: YOUR SOLUTION USING 'IF/ELSE STATEMENTS' SHOULD START HERE  //
+                //    // Do this if the user option is incorrect.
+                //    if (usersAnswer != answer)
+                //    {
+                //        // Print what the actual option was
+                //        Console.WriteLine("Good try, but no: {0} % {1} = {2}", A, B, answer);
+                //    }
+                //}
+                
+                //if (userChoiceOperator == 2)
+                //{
+                //    answer = (A * B);
+                //    Console.WriteLine("What is the result of {0} * {1}?", A, B);
+                //    // Collect user response
+                //    usersAnswer = Convert.ToInt32(Console.ReadLine());
 
-                // If the user selects option 2
-                else if (userChoiceOperator == 2)
-                {
-                    A = rand.Next(minA, maxA);
-                    B = rand.Next(minB, maxB);
-                    answer = (A * B);
+                //    if (usersAnswer != answer)
+                //    {
+                //        // Print what the actual answer was
+                //        Console.WriteLine("Good try, but no: {0} * {1} = {2}", A, B, answer);
+                //    }
+                //}
 
-                    Console.WriteLine("What is the result of {0} * {1}?", A, B);
-                    // Collect user response
-                    usersAnswer = Convert.ToInt32(Console.ReadLine());
-                }
-                // If the user is wrong and the selection is option 2 do this (compatible with all at the same time so no repeats)
-                else if (usersAnswer != answer && userChoiceOperator == 2)
-                {
-                    // Print what the actual answer was
-                    Console.WriteLine("Good try, but no: {0} * {1} = {2}", A, B, answer);
-                }
+                //if (userChoiceOperator == 3)
+                //{
+                //    answer = (A / B);
+                //    Console.WriteLine("What is the result of {0} / {1}?", A, B);
+                //    usersAnswer = Convert.ToInt32(Console.ReadLine());
 
+                //    if (usersAnswer != answer)
+                //    {
+                //        // Print what the actual answer was
+                //        Console.WriteLine("Good try, but no: {0} / {1} = {2}", A, B, answer);
+                //    }
+                //}
+
+                //if (userChoiceOperator == 4)
+                //{
+                //    answer = (A / B) % C;
+                //    // Query user
+                //    Console.WriteLine("What is the result of ({0} / {1}) % {2}?", A, B, C);
+                //    usersAnswer = Convert.ToInt32(Console.ReadLine());
+
+
+                //    if (usersAnswer != answer)
+                //    {
+                //        // Print what the actual answer was
+                //        Console.WriteLine("Good try, but no: ({0} / {1}) % {2} = {3}", A, B, C, answer);
+                //    }
+                //}
+                ////**********************************************************************************************************************//
+                //// STUDENTS: YOUR SOLUTION USING 'IF STATEMENTS' SHOULD END HERE  //
+                //// STUDENTS: YOUR SOLUTION USING 'IF/ELSE STATEMENTS' SHOULD START HERE  //
+                
+                //if (userChoiceOperator == 1)
+                //{
+                //    answer = (A % B);
+
+                //    Console.WriteLine("What is the result of {0} % {1}?", A, B);
+                //    // Collect user response
+                //    usersAnswer = Convert.ToInt32(Console.ReadLine());
+
+                //    if (usersAnswer == answer)
+                //    {
+                //        return;
+                //    }
+                //    else
+                //    {
+                //        // Print what the actual answer was
+                //        Console.WriteLine("Good try, but no: {0} % {1} = {2}", A, B, answer);
+                //    }
+                //}
+                //// If the user is wrong and the selection is option 2 do this (compatible with all at the same time so no repeats)
+               
+                //// If the user selects option 2
+                //else if (userChoiceOperator == 2)
+                //{
+                //    answer = (A * B);
+
+                //    Console.WriteLine("What is the result of {0} * {1}?", A, B);
+                //    // Collect user response
+                //    usersAnswer = Convert.ToInt32(Console.ReadLine());
+
+                //    // If the user is wrong and the selection is option 2 do this (compatible with all at the same time so no repeats)
+                //    if (usersAnswer == answer)
+                //    {
+                //        return;
+                //    }
+                //    else
+                //    {
+                //        // Print what the actual answer was
+                //        Console.WriteLine("Good try, but no: {0} * {1} = {2}", A, B, answer);
+                //    }
+                //}
+                
+
+                //else if (userChoiceOperator == 3)
+                //{
+                //    answer = (A / B);
+
+                //    Console.WriteLine("What is the result of {0} / {1}?", A, B);
+                //    // Collect user response
+                //    usersAnswer = Convert.ToInt32(Console.ReadLine());
+
+                //    // If the user is wrong and the selection is option 2 do this (compatible with all at the same time so no repeats)
+                //    if (usersAnswer == answer)
+                //    {
+                //        return;
+                //    }
+                //    else
+                //    {
+                //        // Print what the actual answer was
+                //        Console.WriteLine("Good try, but no: {0} / {1} = {2}", A, B, answer);
+                //    }
+                //}                
+
+                //else if (userChoiceOperator == 4)
+                //{
+                //    answer = (A / B) % C;
+
+                //    Console.WriteLine("What is the result of {0} / {1} % {2}?", A, B, C);
+                //    // Collect user response
+                //    usersAnswer = Convert.ToInt32(Console.ReadLine());
+
+                //    // If the user is wrong and the selection is option 2 do this (compatible with all at the same time so no repeats)
+                //    if (usersAnswer == answer)
+                //    {
+                //        return;
+                //    }
+                //    else
+                //    {
+                //        // Print what the actual answer was
+                //        Console.WriteLine("Good try, but no: ({0} / {1}) % C= {2}", A, B, C, answer);
+                //    }
+                //}
+                
                 // STUDENTS: YOUR SOLUTION USING 'IF/ELSE STATEMENTS' SHOULD END HERE  //                               
                 // STUDENTS: YOUR SOLUTION USING 'SWITCH STATEMENTS' SHOULD START HERE  //
+                //**********************************************************************************************************************//
 
                 // Switch statement checks for selection 3 or 4, ignores others
                 if (userChoiceOperator == 3 || userChoiceOperator == 4)
                 { 
                     switch (userChoiceOperator)
                     {
-                    // Selection 3
-                    case 3:
-                        A = rand.Next(minA, maxA);
-                        B = rand.Next(minB, maxB);
-                        // Calculate answer from random numbers
-                        answer = (A / B);
-                        // Query user
-                        Console.WriteLine("What is the result of {0} / {1}?", A, B);
-                        // Collect user answer
-                        usersAnswer = Convert.ToInt32(Console.ReadLine());
+                        case 1:
+                            answer = (A % B);
+
+                            // Query user
+                            Console.WriteLine("What is the result of {0} % {1}?", A, B);
+                            // Collect user answer
+                            usersAnswer = Convert.ToInt32(Console.ReadLine());
 
                             // If user is not correct
                             if (usersAnswer != answer)
                             {
-                                // Skip to the default case 
-                                goto Incorrect;
+                                Console.WriteLine("Good try, but no, {0} % {1} = {2}", A, B, answer);
+                            }
+                            break;
+                        case 2:
+                            answer = (A * B);
+
+                            // Query user
+                            Console.WriteLine("What is the result of {0} * {1}?", A, B);
+                            // Collect user answer
+                            usersAnswer = Convert.ToInt32(Console.ReadLine());
+
+                            // If user is not correct
+                            if (usersAnswer != answer)
+                            {
+                                Console.WriteLine("Good try, but no, {0} * {1} = {2}", A, B, answer);
+                            }
+                            break;
+                        // Selection 3
+                        case 3:                        
+                            // Calculate answer from random numbers
+                            answer = (A / B);
+                            // Query user
+                            Console.WriteLine("What is the result of {0} / {1}?", A, B);
+                            // Collect user answer
+                            usersAnswer = Convert.ToInt32(Console.ReadLine());
+
+                            // If user is not correct
+                            if (usersAnswer != answer)
+                            {
+                                Console.WriteLine("Good try, but no, {0} / {1} = {2}", A, B, answer);
                             }
                             break;
                         // Selection 4
-                        case 4:
-                            A = rand.Next(minA, maxA);
-                            B = rand.Next(minB, maxB);
-                            // Add C generation from min and max
-                            C = rand.Next(minC, maxC);
-
+                        case 4:                            
                             // Calc the answer
                             answer = ((A / B) % C);
 
-                        // Query user
+                            // Query user
                             Console.WriteLine("What is the result of ({0} / {1}) % {2}?", A, B, C);
-                        // Collect user answer
+                            // Collect user answer
                             usersAnswer = Convert.ToInt32(Console.ReadLine());
-                        // If user is not correct
+                            // If user is not correct
                             if (usersAnswer != answer)
                             {
-                            // Skip to the default case 
-                                goto Incorrect;
+                                // Skip to the default case 
+                                Console.WriteLine("Good try, but no: {0} / {1} = {2}", A, B, answer);
                             }
                             break;
                         
                         default:
-                        // Skip landing
-                        Incorrect:
-                        Console.WriteLine("Good try, but no: {0} / {1} = {2}", A, B, answer);
-                        break;
+                            // Skip landing                            
+                            Console.WriteLine("You need to pick a number between 1 and 4");
+                            break;
                     } // Repeat entire loop
                 }
 
