@@ -47,18 +47,22 @@ namespace A3_Date
             {             
                 importer.nextDay();
 
-                while (counterMonth != bDayMonth)
+                while (counterMonth != bDayMonth && counterDay != bDayDay)
                 {
 
                     if (counterMonth > 12)
                     {
                         //importer.nextDay();
-                        counterMonth = 0;                        
+                        counterMonth = 0;
+                        Console.WriteLine(counterMonth + "out");
                     }
                     
-                    counterDay += importer.daysInMonth();
-                    counterMonth++;
-                    Console.WriteLine(counterMonth + "out");
+                    else if  (counterMonth <= 12)
+                    {
+                        counterDay += importer.daysInMonth();
+                        counterMonth++;
+                        Console.WriteLine(counterMonth + "out");
+                    }                   
                 }                
                 counterDay += (birthday.getDay() - importer.getDay());
                 // Print number of days until birthday
