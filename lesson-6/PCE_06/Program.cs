@@ -11,22 +11,22 @@ namespace PCE_StarterProject
 
             // Array_Of_Possibly_Null_Objects aopno = new Array_Of_Possibly_Null_Objects();
             // aopno.RunExercise();
-            
+
             // Television_Definition td = new Television_Definition();
             // td.RunExercise();
 
             // Objects_As_Parameters oap = new Objects_As_Parameters();
             // oap.RunExercise();
 
-             //Objects_As_Return_Values oarp = new Objects_As_Return_Values();
-             //oarp.RunExercise();
+            //Objects_As_Return_Values oarp = new Objects_As_Return_Values();
+            //oarp.RunExercise();
 
-             Objects_As_Parameters_And_Return_Values oasarv = new Objects_As_Parameters_And_Return_Values();
-             oasarv.RunExercise();
+            //Objects_As_Parameters_And_Return_Values oasarv = new Objects_As_Parameters_And_Return_Values();
+            //oasarv.RunExercise();
 
             // Even though these are no longer part of this PCE they're being left here:
-            // BarChart_Demonstration bcd = new BarChart_Demonstration();
-            // bcd.RunExercise();
+            BarChart_Demonstration bcd = new BarChart_Demonstration();
+            bcd.RunExercise();
 
             // TVStorage_Demonstration tvsd_d = new TVStorage_Demonstration();
             // tvsd_d.RunExercise();
@@ -263,15 +263,34 @@ namespace PCE_StarterProject
             return 0;
         }
 
+        // 1. Implement GetAverage method
         public double GetAverage()
         {
-            // TODO: Implement this!!
-            return Double.MinValue;
+            double sum = 0.0;            
+            
+            //GetSize() = array.length()
+            for (int counter = 0; counter < GetSize(); counter++)
+            {
+                sum += m_numbers[counter];
+            }
+            // Divide the total of all by the size of the array
+            return sum / GetSize();
         }
 
+        // B. If slot 0 in array contained the value 2
+        // Then: following array elements contained
+        // 4, 6, 8, and then 10
         public void PrintBarChart()
         {
-            // TODO: Implement this!!
+            for (int counter = 0; counter < GetSize(); counter++)
+            {
+                double value = m_numbers[counter];
+                for (int i = 0; i < value; i++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
         }
     }
 
