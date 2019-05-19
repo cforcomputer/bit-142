@@ -18,11 +18,11 @@ namespace PCE_StarterProject
             // Objects_As_Parameters oap = new Objects_As_Parameters();
             // oap.RunExercise();
 
-            // Objects_As_Return_Values oarp = new Objects_As_Return_Values();
-            // oarp.RunExercise();
+             //Objects_As_Return_Values oarp = new Objects_As_Return_Values();
+             //oarp.RunExercise();
 
-            // Objects_As_Parameters_And_Return_Values oasarv = new Objects_As_Parameters_And_Return_Values();
-            // oasarv.RunExercise();
+             Objects_As_Parameters_And_Return_Values oasarv = new Objects_As_Parameters_And_Return_Values();
+             oasarv.RunExercise();
 
             // Even though these are no longer part of this PCE they're being left here:
             // BarChart_Demonstration bcd = new BarChart_Demonstration();
@@ -48,6 +48,32 @@ namespace PCE_StarterProject
     // This is the "user interface" for the Objects-As-Parameters exercise
     public class TelevisionHandler
     {
+        // 1. Add new method named PickMoreExpensiveTV
+        // Given as 2 parameters (Television objects)
+        public Television PickMoreExpensiveTV(Television tvOne, Television tvTwo)
+        {
+            // Figure out which object costs more using getting methods in Television class
+            if (tvOne == tvTwo)
+            {
+                return tvOne;
+            }
+            // if the method is given one null parameter and one non-null parameter,
+            // then the method should return the non-null parameter.
+            else if (tvOne == null && tvTwo != null)
+            {
+                return tvTwo;
+            }
+            else if (tvOne != null && tvTwo == null)
+            {
+                return tvOne;
+            }
+            // If both parameters are null, then the method should return null.
+            else
+            {
+                return null;
+            }
+        }
+
         public void PrintArrayOfTVs()
         {
             Console.WriteLine("You need to implement this!!");
@@ -178,20 +204,24 @@ namespace PCE_StarterProject
         public void RunExercise()
         {
             TelevisionHandler tvh = new TelevisionHandler();
-            Television firstTV;
-            Television secondTV;
+            Television tvOne;
+            Television tvTwo;
+            Television moreExpensiveTV;
 
             // Get tvh to create the first TV object
+            tvOne = new Television("Brand X", 1000, 42);
 
             // Get tvh to create the second TV object
+            tvTwo = new Television("Brand 7", 50, 40);
 
-
-            Television moreExpensiveTV;
+            // Next, call the PickMoreExpensiveTV method, saving
+            // that more expensive TV into a third local variable, named moreExpensiveTV
+            moreExpensiveTV = tvh.PickMoreExpensiveTV(tvOne, tvTwo);
 
             // Get tvh to figure out which TV is more expensive
 
             // Print out both TVs
-
+            tvh.PrintMyTV(moreExpensiveTV);
             // Announce which TV is more expensive
 
             // Print out the moreExpensiveTV
