@@ -25,11 +25,11 @@ namespace PCE_StarterProject
             //oasarv.RunExercise();
 
             // Even though these are no longer part of this PCE they're being left here:
-            BarChart_Demonstration bcd = new BarChart_Demonstration();
-            bcd.RunExercise();
+            //BarChart_Demonstration bcd = new BarChart_Demonstration();
+            //bcd.RunExercise();
 
-            // TVStorage_Demonstration tvsd_d = new TVStorage_Demonstration();
-            // tvsd_d.RunExercise();
+            TVStorage_Demonstration tvsd_d = new TVStorage_Demonstration();
+            tvsd_d.RunExercise();
         }
     }
 
@@ -348,13 +348,17 @@ namespace PCE_StarterProject
     }
 
     /////////////////////////////////////////////////////////////////////////////////
-
+    ///
     public class TVStorage
     {
         Television[] tvs = new Television[5];
 
+        // 1. The constructor should do any initialization that needs to be done.
+        // Each TVStorage class should be able to store exactly 5 Television 
+        // objects.
         public TVStorage()
         {
+            tvs = new Television[5];
         }
 
         // TODO: Implement this method!
@@ -363,20 +367,53 @@ namespace PCE_StarterProject
         //      the object reference in the array with null
         public void StoreTV(int iLocation, Television tvToStore)
         {
+            // 1. StoreTV should store the given Television object into
+            // the specified array location
+            if (iLocation < tvs.Length || iLocation >= 0)
+            {
+                tvs[iLocation] = tvToStore;
+            }
+            else
+            {
+                return;
+            }
         }
 
         // TODO: Implement this method!
         // If the location is invalid (negative, or too large) return null.
         public Television GetTV(int iLocation)
         {
-            return new Television(); // odd, but will guarantee all tests fail, to start
+            // 2. Return the television object at the specified index.
+            if (iLocation < tvs.Length || iLocation >= 0)
+            {
+                return tvs[iLocation];
+            }
+            else
+            {
+                return null;
+            }            
         }
-
+        
         // TODO: Implement this method!
         // If a given slot in the array is non-NULL, then call .Print on it
         // otherwise, print out "Slot X is null", where X is the slot index.
         public void PrintAllTVs()
         {
+            // 3. Call Print on non-null object in array
+            // Should print "Slot X is null" when encounting null array
+            // X should be replaced by the slot number.                   
+
+            for (int i = 0; i < tvs.Length; i++)
+            {
+                if (tvs[i] != null)
+                {   // Somehow print the object tvs[i] in brand, price, size                 
+                    Console.WriteLine("Brand: {0}\nPrice: {1}\nSize: {2}", tvs[i], tvs[i], tvs[i]);
+                }
+                else
+                {
+                    Console.WriteLine("Slot {0} is null", i);
+                }
+            }
         }
 
     }
