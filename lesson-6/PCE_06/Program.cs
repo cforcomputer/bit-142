@@ -142,23 +142,62 @@ namespace PCE_StarterProject
     // we've whipped up the 'Television' class
     public class Television
     {
+        private string brand;
+        private decimal price;
+        private double size;
+
+        // default constructor
         public Television()
         {
+            this.brand = "";
+            this.price = 0;
+            this.size = 0.0;
         }
+        // param constructor
         public Television(string br, decimal pr, double si)
         {
+            this.brand = br;
+            this.price = pr;
+            this.size = si;
         }
 
+        // getter for brand
         public string GetBrand()
         {
-            return "YOU NEED TO IMPLEMENT THIS!";
+            return this.brand;
         }
+        // setter for brand
         public void SetBrand(string newValue)
         {
+            this.brand = newValue;
+        }
+        // getter for price
+        public decimal GetCost()
+        {
+            return this.price;
+        }
+        // setter for price
+        public void SetCost(decimal newValue)
+        {
+            this.price = newValue;
+        }
+        // getter for size
+        public double GetSize()
+        {
+            return this.size;
+        }
+        // setter for size
+        public void SetSize(double newValue)
+        {
+            this.size = newValue;
         }
 
+        // Print the current value of brand, price, and size
         public void Print()
         {
+            Console.WriteLine("Brand: {0}", GetBrand());
+            Console.WriteLine("Price: {0}", GetCost());
+            Console.WriteLine("Size: {0}", GetSize());
         }
     }
 
@@ -399,6 +438,7 @@ namespace PCE_StarterProject
         // otherwise, print out "Slot X is null", where X is the slot index.
         public void PrintAllTVs()
         {
+            
             // 3. Call Print on non-null object in array
             // Should print "Slot X is null" when encounting null array
             // X should be replaced by the slot number.                   
@@ -407,10 +447,11 @@ namespace PCE_StarterProject
             {
                 if (tvs[i] != null)
                 {   // Somehow print the object tvs[i] in brand, price, size                 
-                    Console.WriteLine("Brand: {0}\nPrice: {1}\nSize: {2}", tvs[i], tvs[i], tvs[i]);
+                    tvs[i].Print();
                 }
                 else
                 {
+                    // Console.WriteLine(tvs[i]);
                     Console.WriteLine("Slot {0} is null", i);
                 }
             }
