@@ -1,0 +1,450 @@
+using System;
+
+namespace PCE_StarterProject
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // BarChart_Demonstration bcd = new BarChart_Demonstration();
+            // bcd.RunExercise();
+
+            // TVStorage_Demonstration tvsd_d = new TVStorage_Demonstration();
+            // tvsd_d.RunExercise();
+
+            // Basic_Inheritance bi = new Basic_Inheritance();
+            // bi.RunExercise();
+
+            // Constructors_Calling_One_From_Another ccofa = new Constructors_Calling_One_From_Another();
+            // ccofa.RunExercise();
+
+            // Calling_Methods_In_Base_Class cmibc = new Calling_Methods_In_Base_Class();
+            // cmibc.RunExercise();
+
+            // Inheritance_Constructors ic = new Inheritance_Constructors();
+            // ic.RunExercise();
+
+            // Explain_Basic_Polymorphism ebp = new Explain_Basic_Polymorphism();
+            // ebp.RunExercise();
+
+            // Create_Basic_Polymorphic_Method cbpm = new Create_Basic_Polymorphic_Method();
+            // cbpm.RunExercise();
+
+            // Polymorphism_And_Arrays paa = new Polymorphism_And_Arrays();
+            // paa.RunExercise();
+
+            // Overriding_ToString ot = new Overriding_ToString();
+            // ot.RunExercise();
+
+            // ToString_And_Arrays taa = new ToString_And_Arrays();
+            // taa.RunExercise();
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////
+
+        public class BarChart
+        {
+            int[] m_numbers;
+
+            public BarChart()
+            {
+                m_numbers = new int[5];
+            }
+
+            public int GetSize()
+            {
+                return m_numbers.Length;
+            }
+
+            public void SetValue(int newVal, int idx)
+            {
+                if (idx >= 0 && idx < m_numbers.Length)
+                    m_numbers[idx] = newVal;
+
+                // Interesting point: note the silent failure
+                // if idx is out of range
+            }
+
+            public int GetValue(int idx)
+            {
+                if (idx >= 0 && idx < m_numbers.Length)
+                    return m_numbers[idx];
+
+                // Is this a good value to return here?
+                return 0;
+            }
+
+            public double GetAverage()
+            {
+                // TODO: Implement this!!
+                return Double.MinValue;
+            }
+
+            public void PrintBarChart()
+            {
+                // TODO: Implement this!!
+            }
+        }
+        public class BarChart_Demonstration
+        {
+            public void RunExercise()
+            {
+                BarChart h1 = new BarChart();
+                BarChart h2 = new BarChart();
+
+                for (int i = 0; i < 5; i++)
+                {
+                    h1.SetValue((i + 1) * 2, i);
+                    h2.SetValue(10 - i, i);
+                }
+
+
+                Console.WriteLine("Data set 1 (Version 1): Avg: {0:0.00}", h1.GetAverage());
+                h1.PrintBarChart();
+                Console.WriteLine();
+
+                // What if the first two values were different?
+                h1.SetValue(5, 0);
+                h1.SetValue(7, 1);
+
+                Console.WriteLine("Data set 1 (Version 2): Avg: {0:0.00}", h1.GetAverage());
+                h1.PrintBarChart();
+                Console.WriteLine();
+
+                // Wait, hold on - I got those backwards :)
+                h1.SetValue(7, 0);
+                h1.SetValue(5, 1);
+
+                Console.WriteLine("Data set 1 (Version 3): Avg: {0:0.00}", h1.GetAverage());
+                h1.PrintBarChart();
+                Console.WriteLine();
+
+                // I just got some new data - let me adjust the first value:
+                h1.SetValue(9, 0);
+
+                Console.WriteLine("Data set 1 (Version 4): Avg: {0:0.00}", h1.GetAverage());
+                h1.PrintBarChart();
+                Console.WriteLine();
+
+                // How do the two data sets compare?
+                Console.WriteLine("Data set 1 (Version 4): Avg: {0:0.00}", h1.GetAverage());
+                Console.WriteLine("Data set 2 (Version 1): Avg: {0:0.00}", h2.GetAverage());
+
+                Console.WriteLine("\nData set 1:");
+                h1.PrintBarChart();
+                Console.WriteLine("\nData set 2:");
+                h2.PrintBarChart();
+                Console.WriteLine();
+            }
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////
+
+        // We need a class to pass as a parameter for this exercises, so
+        // we're using the 'Television' class
+        // PLEASE COPY THIS FROM YOUR PRIOR PCE!
+        // I've included just enough code here so that this project compiles, but you'll
+        // need the full implementation from the prior class
+        public class Television
+        {
+            public Television() 
+            {
+            }
+            public Television(string br, decimal pr, double si)
+            {
+            }
+        }
+
+        public class TVStorage
+        {
+            Television[] tvs = new Television[5];
+
+            public TVStorage()
+            {
+            }
+
+            // TODO: Implement this method!
+            // If the location is invalid (negative, or too large) do nothing.
+            // If the parameter is null (and the location is ok), then replace
+            //      the object reference in the array with null
+            public void StoreTV(int iLocation, Television tvToStore)
+            {
+            }
+
+            // TODO: Implement this method!
+            // If the location is invalid (negative, or too large) return null.
+            public Television GetTV(int iLocation)
+            {
+                return new Television(); // odd, but will guarantee all tests fail, to start
+            }
+
+            // TODO: Implement this method!
+            // If a given slot in the array is non-NULL, then call .Print on it
+            // otherwise, print out "Slot X is null", where X is the slot index.
+            public void PrintAllTVs()
+            {
+            }
+
+        }
+
+        public class TVStorage_Demonstration
+        {
+            public void RunExercise()
+            {
+                TVStorage tvs = new TVStorage();
+                tvs.PrintAllTVs();
+
+                Television t = new Television("Brand X", 1000, 42);
+                tvs.StoreTV(2, t);
+                tvs.StoreTV(4, new Television("Brand Y", 2000, 52));
+
+                Television t2 = tvs.GetTV(0);
+                Console.WriteLine("Is t2 null? (It should be) {0}", t2 == null);
+
+                tvs.PrintAllTVs();
+
+                t2 = tvs.GetTV(2);
+                Console.WriteLine("Is t2 the same as t? (It should be) {0}", t2 == t);
+
+            }
+        }
+
+
+        class Basic_Inheritance
+        {
+            public void RunExercise()
+            {
+            }
+        }
+
+        class Constructors_Calling_One_From_Another
+        {
+            public void RunExercise()
+            {
+            }
+        }
+
+
+
+        class Calling_Methods_In_Base_Class
+        {
+            public void RunExercise()
+            {
+            }
+        }
+
+        class Inheritance_Constructors
+        {
+            public void RunExercise()
+            {
+            }
+        }
+
+        // The comments you need to fill in are inside RunExercise, below:
+        class Explain_Basic_Polymorphism
+        {
+            public void RunExercise()
+            {
+                BaseClass bcRef1 = new BaseClass();
+                BaseClass bcRef2 = new DerrivedClassOne();
+                BaseClass bcRef3 = new TheOtherDerrivedClass();
+
+                Console.WriteLine("variables is of type BaseClass, object is of type BaseClass:");
+                bcRef1.VirtualMethod1();
+                // What output does the prior line produce?  Paste it in here:
+                //
+
+                // Why does bcRef1.VirtualMethod1 produce that output?  Which method is it calling, and why?
+                // YOUR ANSWER:
+                //
+                bcRef1.VirtualMethodTWO();
+                // What output does the prior line produce?  Paste it in here:
+                //
+
+                // Why does bcRef1.VirtualMethodTWO produce that output?  Which method is it calling, and why?
+                // YOUR ANSWER:
+                //
+
+                Console.WriteLine("variables is of type BaseClass, object is of type DerrivedClassOne:");
+                bcRef2.VirtualMethod1();
+                // What output does the prior line produce?  Paste it in here:
+                //
+
+                // Why does bcRef2.VirtualMethod1 produce that output?  Which method is it calling, and why?
+                // YOUR ANSWER:
+                //
+                bcRef2.VirtualMethodTWO();
+                // What output does the prior line produce?  Paste it in here:
+                //
+
+                // Why does bcRef2.VirtualMethodTWO produce that output?  Which method is it calling, and why?
+                // YOUR ANSWER:
+                //
+
+                Console.WriteLine("variables is of type BaseClass, object is of type TheOtherDerrivedClass:");
+                bcRef3.VirtualMethod1();
+                // What output does the prior line produce?  Paste it in here:
+                //
+
+                // Why does bcRef3.VirtualMethod1 produce that output?  Which method is it calling, and why?
+                // YOUR ANSWER:
+                //
+                bcRef3.VirtualMethodTWO();
+                // What output does the prior line produce?  Paste it in here:
+                //
+
+                // Why does bcRef3.VirtualMethodTWO produce that output?  Which method is it calling, and why?
+                // YOUR ANSWER:
+                //
+            }
+        }
+        class BaseClass
+        {
+            public virtual void VirtualMethod1()
+            {
+                Console.WriteLine("BaseClass.VirtualMethod1!");
+            }
+            // This is here just to show you that virtual & public can be in either order
+            // void (the return type) needs to go immediately prior to the method name, though
+            // (try something like public void virtual, and note the compiler errors you get)
+            virtual public void VirtualMethodTWO()
+            {
+                Console.WriteLine("BaseClass.VirtualMethodTWO!");
+            }
+        }
+        class DerrivedClassOne : BaseClass
+        {
+            public override void VirtualMethod1()
+            {
+                Console.WriteLine("DerrivedClassOne.VirtualMethod1");
+                base.VirtualMethod1();
+            }
+        }
+        class TheOtherDerrivedClass : BaseClass
+        {
+            public override void VirtualMethodTWO()
+            {
+                Console.WriteLine("TheOtherDerrivedClass.VirtualMethodTWO");
+            }
+        }
+
+        public class Create_Basic_Polymorphic_Method
+        {
+            public void RunExercise()
+            {
+            }
+        }
+
+        public class LightBulb
+        {
+            public double CalculateLight(double amps)
+            {
+                // We want to start by returning something that will cause the tests to fail.
+                // Not A Number (NaN) is a good choice for that :)
+                return Double.NaN;
+            }
+            public double CalculateHeat(double amps)
+            {
+                return Double.NaN;
+            }
+        }
+        public class IncandescentLightBulb : LightBulb
+        {
+        }
+        public class FluorescentLightBulb : LightBulb
+        {
+        }
+
+
+        class Polymorphism_And_Arrays
+        {
+            public void RunExercise()
+            {
+                // This will create 10 spaces, each of which is a blank reference to 
+                // a GeneralPrinter.
+                GeneralPrinter[] gps = new GeneralPrinter[10];
+
+                gps[1] = new GeneralPrinter();
+                gps[2] = new GeneralPrinter(21);
+                gps[3] = new SpecificPrinter();
+
+                gps[6] = new GeneralPrinter(1111111);
+                gps[7] = new SpecificPrinter();
+
+                for (int i = 0; i < gps.Length; i++)
+                {
+                    if (gps[i] != null)
+                        gps[i].PrintTheMessage();
+                }
+            }
+        }
+        public class GeneralPrinter
+        {
+            private int data; // mostly, we just want to see that there are, in fact,
+            // separate objects
+
+            public GeneralPrinter()
+            {
+                data = 99;
+            }
+            public GeneralPrinter(int n) // in case you want to create a GP with a specific data value...
+            {
+                data = n;
+            }
+            public void PrintTheMessage()
+            {
+                Console.WriteLine("GeneralPrinter.PrintTheMessage: This is my general message.  My data:{0}", data);
+            }
+        }
+        public class SpecificPrinter : GeneralPrinter
+        {
+        }
+
+
+        class Overriding_ToString
+        {
+            public void RunExercise()
+            {
+                MyPoint p = new MyPoint(3, 7.6);
+
+                Console.WriteLine("Your point is at:" + p.ToString());
+                Console.WriteLine("Your point is at:{0}", p.ToString());
+                Console.WriteLine("Your point is at:" + p);
+                Console.WriteLine("Your point is at:{0}", p);
+            }
+        }
+        public class MyPoint
+        {
+            double x;
+            double y;
+            public MyPoint(double nX, double nY)
+            {
+                x = nX;
+                y = nY;
+            }
+            double getX() { return x; }
+            void setX(double nx) { x = nx; }
+
+            double getY() { return y; }
+            void setY(double ny) { y = ny; }
+        }
+
+        class ToString_And_Arrays
+        {
+            public void RunExercise()
+            {
+                //Object[] objs = new Object[4];
+                //objs[0] = new MyPoint(1, 2);
+                //objs[1] = new IncandescentLightBulb(10) ; // amps, maybe?
+                //objs[2] = new MyPoint(4, 7);
+                //objs[3] = new IncandescentLightBulb(20) ; // amps, maybe?
+
+                //for (int i = 0; i < objs.Length; i++)
+                //{
+                //    string s = objs[i].ToString();
+                //    Console.WriteLine(s);
+                //}
+            }
+        }
+    }
+}
