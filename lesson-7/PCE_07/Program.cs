@@ -12,8 +12,8 @@ namespace PCE_StarterProject
             // TVStorage_Demonstration tvsd_d = new TVStorage_Demonstration();
             // tvsd_d.RunExercise();
 
-            // Basic_Inheritance bi = new Basic_Inheritance();
-            // bi.RunExercise();
+             Basic_Inheritance bi = new Basic_Inheritance();
+             bi.RunExercise();
 
             // Constructors_Calling_One_From_Another ccofa = new Constructors_Calling_One_From_Another();
             // ccofa.RunExercise();
@@ -214,6 +214,100 @@ namespace PCE_StarterProject
         {
             public void RunExercise()
             {
+                Car carPrinter = new Car();
+                FordF250 fordPrinter = new FordF250();
+                ToyotaPrius toyotaPrinter = new ToyotaPrius();
+
+                // carPrinter.Print();
+                fordPrinter.Print();
+                fordPrinter.PrintF250();
+
+                toyotaPrinter.Print();
+                toyotaPrinter.PrintToyota();
+            }          
+        }
+
+        // 1. Create the Car classes (basic inheritance)
+        class Car
+        {
+            private double carWeight = 2000.25;
+            private double carTankSize = 10.00;
+
+            public double GetWeight()
+            {
+                return carWeight;
+            }
+
+            public void SetWeight(double carWeight)
+            {
+                if (carWeight >= 0)
+                {
+                    this.carWeight = carWeight;
+                }                
+            }
+
+            public double GetTankSize()
+            {
+                return carTankSize;
+            }
+
+            public void SetTankSize(double carTankSize)
+            {
+                if (carTankSize >= 0)
+                {
+                    this.carTankSize = carTankSize;
+                }                
+            }
+
+            public void Print()
+            {
+                Console.WriteLine("Weight:{0:N2}", this.carWeight);
+                Console.WriteLine("Gas Tank:{0:N2}", this.carTankSize);
+            }
+        }
+
+        // 1B. Ford F-250 (basic inheritance)
+        class FordF250 : Car
+        {           
+            private double maxPoundsOfCargo = 200.70;
+
+            public double GetMaxPoundsOfCargo()
+            {
+                return maxPoundsOfCargo;
+            }
+            public void SetMaxPoundsOfCargo(double maxPoundsOfCargo)
+            {
+                if (maxPoundsOfCargo >= 0)
+                {
+                    this.maxPoundsOfCargo = maxPoundsOfCargo;
+                }                
+            }
+
+            public void PrintF250()
+            {
+                Console.WriteLine("Max Cargo:{0:N2}", this.maxPoundsOfCargo);                
+            }
+        }
+        // 1C. Toyota prius (basic inheritance)
+        class ToyotaPrius : Car
+        {
+            private double maxPoundsOfCargo = 1337;
+
+            public double GetMaxPoundsOfCargo()
+            {
+                return maxPoundsOfCargo;
+            }
+            public void SetMaxPoundsOfCargo(double maxPoundsOfCargo)
+            {
+                if (maxPoundsOfCargo >= 0)
+                {
+                    this.maxPoundsOfCargo = maxPoundsOfCargo;
+                }
+            }
+
+            public void PrintToyota()
+            {
+                Console.WriteLine("Max Cargo:{0:N2}", this.maxPoundsOfCargo);
             }
         }
 

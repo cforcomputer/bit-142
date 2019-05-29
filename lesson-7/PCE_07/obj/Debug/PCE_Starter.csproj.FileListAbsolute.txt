@@ -1,0 +1,7 @@
+C:\Users\anon\Desktop\bit-142\lesson-7\PCE_07\bin\Debug\PCE_02.exe.config
+C:\Users\anon\Desktop\bit-142\lesson-7\PCE_07\bin\Debug\PCE_02.exe
+C:\Users\anon\Desktop\bit-142\lesson-7\PCE_07\bin\Debug\PCE_02.pdb
+C:\Users\anon\Desktop\bit-142\lesson-7\PCE_07\obj\Debug\PCE_Starter.csprojAssemblyReference.cache
+C:\Users\anon\Desktop\bit-142\lesson-7\PCE_07\obj\Debug\PCE_Starter.csproj.CoreCompileInputs.cache
+C:\Users\anon\Desktop\bit-142\lesson-7\PCE_07\obj\Debug\PCE_02.exe
+C:\Users\anon\Desktop\bit-142\lesson-7\PCE_07\obj\Debug\PCE_02.pdb
