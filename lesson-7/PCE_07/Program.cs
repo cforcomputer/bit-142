@@ -12,11 +12,11 @@ namespace PCE_StarterProject
             // TVStorage_Demonstration tvsd_d = new TVStorage_Demonstration();
             // tvsd_d.RunExercise();
 
-             Basic_Inheritance bi = new Basic_Inheritance();
-             bi.RunExercise();
+            //Basic_Inheritance bi = new Basic_Inheritance();
+            //bi.RunExercise();
 
-            // Constructors_Calling_One_From_Another ccofa = new Constructors_Calling_One_From_Another();
-            // ccofa.RunExercise();
+            Constructors_Calling_One_From_Another ccofa = new Constructors_Calling_One_From_Another();
+            ccofa.RunExercise();
 
             // Calling_Methods_In_Base_Class cmibc = new Calling_Methods_In_Base_Class();
             // cmibc.RunExercise();
@@ -315,8 +315,86 @@ namespace PCE_StarterProject
         {
             public void RunExercise()
             {
+
             }
         }
+        // 1. Create class (constructors)
+        class HomeElectronicsDevice
+        {
+            private double price;
+            private double weight;
+
+            // 2. 
+            public HomeElectronicsDevice(double priceInput, double weightInput)
+            {
+                this.price = priceInput;
+                this.weight = weightInput;
+            }
+
+            // Getters and setters/////////////
+            public void getPrice(double price)
+            {
+                this.price = price;
+            }
+            public double setPrice()
+            {
+                return this.price;
+            }
+            public void getWeight(double weight)
+            {
+                this.weight = weight;
+            }
+            public double getWeight()
+            {
+                return this.weight;
+            }
+            /////////////////////////////////////
+            
+
+        }
+
+        // 1B. Create class (constructors)
+        class TV : HomeElectronicsDevice
+        {
+            private double screenSize;
+
+            // Constructor for building the object, plus assigning screenSize
+            public TV(double priceInput, double weightInput, double screenSizeInput) : base(priceInput, weightInput)
+            {
+                this.screenSize = screenSizeInput;
+            }
+
+            public void setScreenSize(double screenSize)
+            {
+                this.screenSize = screenSize;
+            }
+            public double getScreenSize()
+            {
+                return this.screenSize;
+            }
+        }
+
+        // 1C. Create class (constructors)
+        class GameConsole : HomeElectronicsDevice
+        {
+            private double cpuSpeed;
+
+            public GameConsole(double priceInput, double weightInput, double cpuSpeedInput) : base(priceInput, weightInput)
+            {
+                this.cpuSpeed = cpuSpeedInput;
+            }
+
+            public void getCPUSpeed(double cpuSpeed)
+            {
+                this.cpuSpeed = cpuSpeed;
+            }
+            public double setCPUSpeed()
+            {
+                return this.cpuSpeed;
+            }
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////
 
 
 
