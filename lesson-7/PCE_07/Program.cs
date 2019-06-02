@@ -18,8 +18,8 @@ namespace PCE_StarterProject
             //Constructors_Calling_One_From_Another ccofa = new Constructors_Calling_One_From_Another();
             //ccofa.RunExercise();
 
-             Calling_Methods_In_Base_Class cmibc = new Calling_Methods_In_Base_Class();
-             cmibc.RunExercise();
+             //Calling_Methods_In_Base_Class cmibc = new Calling_Methods_In_Base_Class();
+             //cmibc.RunExercise();
 
             // Inheritance_Constructors ic = new Inheritance_Constructors();
             // ic.RunExercise();
