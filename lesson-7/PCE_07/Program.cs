@@ -18,11 +18,11 @@ namespace PCE_StarterProject
             //Constructors_Calling_One_From_Another ccofa = new Constructors_Calling_One_From_Another();
             //ccofa.RunExercise();
 
-             //Calling_Methods_In_Base_Class cmibc = new Calling_Methods_In_Base_Class();
-             //cmibc.RunExercise();
+            //Calling_Methods_In_Base_Class cmibc = new Calling_Methods_In_Base_Class();
+            //cmibc.RunExercise();
 
-            // Inheritance_Constructors ic = new Inheritance_Constructors();
-            // ic.RunExercise();
+            Inheritance_Constructors ic = new Inheritance_Constructors();
+            ic.RunExercise();
 
             // Explain_Basic_Polymorphism ebp = new Explain_Basic_Polymorphism();
             // ebp.RunExercise();
@@ -501,10 +501,83 @@ namespace PCE_StarterProject
             // This is only okay if there is already a constructor defined in the base class, otherwise there will be an error.
         }
 
+        // Calling One Constructor from Another
         class Inheritance_Constructors
-        {
+        {            
             public void RunExercise()
             {
+                ElectricSaw esaw = new ElectricSaw();
+                esaw.Print();
+
+                ElectricSaw esaw2 = new ElectricSaw(15);
+                esaw2.Print();
+
+                ElectricSaw esaw3 = new ElectricSaw(3, 25.32);
+                esaw3.Print();
+            }
+        }
+
+        // A. Base Class
+        class Saw
+        {
+            protected int sharpness;
+
+            // default constructor
+            public Saw() : this(5) // jump to the main constructor
+            {
+            }
+            // main constructor
+            public Saw(int sharp)
+            {
+                if (sharpness >= 1 && sharpness <= 10)
+                {
+                    this.sharpness = sharp;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a sharpness value between 1 and 10.");
+                }
+            }
+            public void getSharpness(int sharp)
+            {
+                this.sharpness = sharp;
+            }
+            public int setSharpness()
+            {               
+                    return this.sharpness;                
+            }
+
+            // C. Print method
+            public void Print()
+            {
+                Console.WriteLine("Sharpness: {0}", this.sharpness);
+            }            
+        }
+
+        // B. Derived Class
+        class ElectricSaw : Saw
+        {
+            protected double cordLength;
+
+            public ElectricSaw() : this(6) // call sharpness constructor
+            {
+                // Default constructor
+            }
+            // Takes only the value for sharpness
+            public ElectricSaw(int sharp) : this(sharp, 20.00)
+            {
+                // Constructor that sends the values to the third constructor
+            }
+            // Takes the value for sharpness and the length of the cord
+            public ElectricSaw(int sharp, double length) : base(sharp)
+            {
+                this.cordLength = length;
+            }
+
+            public new void Print()
+            {
+                base.Print();
+                Console.WriteLine("Cord Length: {0}", this.cordLength);
             }
         }
 
