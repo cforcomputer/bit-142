@@ -33,11 +33,11 @@ namespace PCE_StarterProject
             //Polymorphism_And_Arrays paa = new Polymorphism_And_Arrays();
             //paa.RunExercise();
 
-            Overriding_ToString ot = new Overriding_ToString();
-            ot.RunExercise();
+            //Overriding_ToString ot = new Overriding_ToString();
+            //ot.RunExercise();
 
-            // ToString_And_Arrays taa = new ToString_And_Arrays();
-            // taa.RunExercise();
+            //ToString_And_Arrays taa = new ToString_And_Arrays();
+            //taa.RunExercise();
         }
 
         /////////////////////////////////////////////////////////////////////////////////
@@ -730,6 +730,11 @@ namespace PCE_StarterProject
                 return (((amps * 3) + 1) * ((amps * 3) + 1)) / amps;
             }
             // 
+
+            public override string ToString()
+            {
+                return "YEET";
+            }
         }
         public class FluorescentLightBulb : LightBulb
         {
@@ -862,7 +867,30 @@ namespace PCE_StarterProject
                     string s = objs[i].ToString();
                     Console.WriteLine(s);
                 }
-            }
+            }            
         }
+
+        /// In case you wanted it
+        /// using System;
+  //namespace ConsoleApplication1
+  //  {
+  //      class ComputerScreen
+  //      {
+  //          public const double WIDTH = 10.5;
+  //          public const double HEIGHT = 14.0;
+  //      }
+  //      class Program
+  //      {
+  //          public const int NUM_TRIES = 5;
+  //          // NAMED CONSTANT
+  //          static void Main(string[] args)
+  //          {
+  //              Console.WriteLine("The width of the screen is {0}", ComputerScreen.WIDTH);
+  //              Console.WriteLine("The height of the screen is {0}", ComputerScreen.HEIGHT);
+  //          }
+  //      }
+    // }
+    
+
     }
 }
