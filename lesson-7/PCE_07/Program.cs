@@ -27,11 +27,11 @@ namespace PCE_StarterProject
             //Explain_Basic_Polymorphism ebp = new Explain_Basic_Polymorphism();
             //ebp.RunExercise();
 
-            Create_Basic_Polymorphic_Method cbpm = new Create_Basic_Polymorphic_Method();
-            cbpm.RunExercise();
+            //Create_Basic_Polymorphic_Method cbpm = new Create_Basic_Polymorphic_Method();
+            //cbpm.RunExercise();
 
-            // Polymorphism_And_Arrays paa = new Polymorphism_And_Arrays();
-            // paa.RunExercise();
+            Polymorphism_And_Arrays paa = new Polymorphism_And_Arrays();
+            paa.RunExercise();
 
             // Overriding_ToString ot = new Overriding_ToString();
             // ot.RunExercise();
@@ -739,14 +739,22 @@ namespace PCE_StarterProject
             {
                 // This will create 10 spaces, each of which is a blank reference to 
                 // a GeneralPrinter.
-                GeneralPrinter[] gps = new GeneralPrinter[10];
+                GeneralPrinter[] gps = new GeneralPrinter[11];
 
                 gps[1] = new GeneralPrinter();
                 gps[2] = new GeneralPrinter(21);
                 gps[3] = new SpecificPrinter();
-
+                
                 gps[6] = new GeneralPrinter(1111111);
                 gps[7] = new SpecificPrinter();
+
+                // 3 . 
+                gps[4] = new GeneralPrinter(3);
+                gps[5] = new GeneralPrinter(14);
+
+                gps[8] = new SpecificPrinter();
+                gps[9] = new SpecificPrinter();
+                gps[10] = new SpecificPrinter();
 
                 for (int i = 0; i < gps.Length; i++)
                 {
@@ -768,13 +776,19 @@ namespace PCE_StarterProject
             {
                 data = n;
             }
-            public void PrintTheMessage()
+            public virtual void PrintTheMessage()
             {
                 Console.WriteLine("GeneralPrinter.PrintTheMessage: This is my general message.  My data:{0}", data);
             }
         }
+        // 2. 
         public class SpecificPrinter : GeneralPrinter
         {
+            public override void PrintTheMessage()
+            {
+                base.PrintTheMessage();
+                Console.WriteLine("Message from a SpecificPrinter object!");
+            }
         }
 
 
