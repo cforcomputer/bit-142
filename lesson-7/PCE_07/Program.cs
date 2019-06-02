@@ -24,11 +24,11 @@ namespace PCE_StarterProject
             //Inheritance_Constructors ic = new Inheritance_Constructors();
             //ic.RunExercise();
 
-            Explain_Basic_Polymorphism ebp = new Explain_Basic_Polymorphism();
-            ebp.RunExercise();
+            //Explain_Basic_Polymorphism ebp = new Explain_Basic_Polymorphism();
+            //ebp.RunExercise();
 
-            // Create_Basic_Polymorphic_Method cbpm = new Create_Basic_Polymorphic_Method();
-            // cbpm.RunExercise();
+            Create_Basic_Polymorphic_Method cbpm = new Create_Basic_Polymorphic_Method();
+            cbpm.RunExercise();
 
             // Polymorphism_And_Arrays paa = new Polymorphism_And_Arrays();
             // paa.RunExercise();
@@ -685,27 +685,51 @@ namespace PCE_StarterProject
         {
             public void RunExercise()
             {
+
             }
         }
 
         public class LightBulb
         {
-            public double CalculateLight(double amps)
+            public virtual double CalculateLight(double amps)
             {
                 // We want to start by returning something that will cause the tests to fail.
                 // Not A Number (NaN) is a good choice for that :)
+
+                // calculate and return incandescent light
                 return Double.NaN;
             }
-            public double CalculateHeat(double amps)
+            public virtual double CalculateHeat(double amps)
             {
+                // Calculate and return the heat for an incandescent light
                 return Double.NaN;
             }
         }
         public class IncandescentLightBulb : LightBulb
         {
+            override public double CalculateHeat(double amps)
+            {
+                return Math.Sqrt(amps * 7);
+            }
+
+            override public double CalculateLight(double amps)
+            {
+                return (((amps * 3) + 1) * ((amps * 3) + 1)) / amps;
+            }
+            // 
         }
         public class FluorescentLightBulb : LightBulb
         {
+            override public double CalculateHeat(double amps)
+            {
+                return Math.Sqrt(Math.Sqrt(amps * 7));
+            }
+
+            override public double CalculateLight(double amps)
+            {
+                return (amps * amps) * 3;
+            }
+            // 
         }
 
 
