@@ -30,11 +30,11 @@ namespace PCE_StarterProject
             //Create_Basic_Polymorphic_Method cbpm = new Create_Basic_Polymorphic_Method();
             //cbpm.RunExercise();
 
-            Polymorphism_And_Arrays paa = new Polymorphism_And_Arrays();
-            paa.RunExercise();
+            //Polymorphism_And_Arrays paa = new Polymorphism_And_Arrays();
+            //paa.RunExercise();
 
-            // Overriding_ToString ot = new Overriding_ToString();
-            // ot.RunExercise();
+            Overriding_ToString ot = new Overriding_ToString();
+            ot.RunExercise();
 
             // ToString_And_Arrays taa = new ToString_And_Arrays();
             // taa.RunExercise();
@@ -707,6 +707,19 @@ namespace PCE_StarterProject
         }
         public class IncandescentLightBulb : LightBulb
         {
+            //private int v;
+
+            //public IncandescentLightBulb(int v)
+            //{
+            //    this.v = v;
+            //}
+            private double amps;
+
+            public IncandescentLightBulb(double amp) : base()
+            {
+                this.amps = amp;
+            }
+
             override public double CalculateHeat(double amps)
             {
                 return Math.Sqrt(amps * 7);
@@ -804,37 +817,51 @@ namespace PCE_StarterProject
                 Console.WriteLine("Your point is at:{0}", p);
             }
         }
+
+        // 3 . 
         public class MyPoint
         {
             double x;
             double y;
+
+            // Constructors
             public MyPoint(double nX, double nY)
             {
                 x = nX;
                 y = nY;
             }
+            // Getters and setters // 
             double getX() { return x; }
             void setX(double nx) { x = nx; }
 
             double getY() { return y; }
             void setY(double ny) { y = ny; }
+            ////////////////////////////
+
+            // 3. B Add the properly overridden ToString method, nothing else
+            public override string ToString()
+            {             
+                
+                return "(" + x + ", " + y + ")";
+            }
         }
 
+        // 3. 
         class ToString_And_Arrays
         {
             public void RunExercise()
             {
-                //Object[] objs = new Object[4];
-                //objs[0] = new MyPoint(1, 2);
-                //objs[1] = new IncandescentLightBulb(10) ; // amps, maybe?
-                //objs[2] = new MyPoint(4, 7);
-                //objs[3] = new IncandescentLightBulb(20) ; // amps, maybe?
+                Object[] objs = new Object[4];
+                objs[0] = new MyPoint(1, 2);
+                objs[1] = new IncandescentLightBulb(10.00); // amps, maybe?
+                objs[2] = new MyPoint(4, 7);
+                objs[3] = new IncandescentLightBulb(20.00); // amps, maybe?
 
-                //for (int i = 0; i < objs.Length; i++)
-                //{
-                //    string s = objs[i].ToString();
-                //    Console.WriteLine(s);
-                //}
+                for (int i = 0; i < objs.Length; i++)
+                {
+                    string s = objs[i].ToString();
+                    Console.WriteLine(s);
+                }
             }
         }
     }
