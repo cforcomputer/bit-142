@@ -21,11 +21,11 @@ namespace PCE_StarterProject
             //Calling_Methods_In_Base_Class cmibc = new Calling_Methods_In_Base_Class();
             //cmibc.RunExercise();
 
-            Inheritance_Constructors ic = new Inheritance_Constructors();
-            ic.RunExercise();
+            //Inheritance_Constructors ic = new Inheritance_Constructors();
+            //ic.RunExercise();
 
-            // Explain_Basic_Polymorphism ebp = new Explain_Basic_Polymorphism();
-            // ebp.RunExercise();
+            Explain_Basic_Polymorphism ebp = new Explain_Basic_Polymorphism();
+            ebp.RunExercise();
 
             // Create_Basic_Polymorphic_Method cbpm = new Create_Basic_Polymorphic_Method();
             // cbpm.RunExercise();
@@ -593,50 +593,62 @@ namespace PCE_StarterProject
                 Console.WriteLine("variables is of type BaseClass, object is of type BaseClass:");
                 bcRef1.VirtualMethod1();
                 // What output does the prior line produce?  Paste it in here:
-                //
+                // Variable of type BaseClass, object is of type BaseClass:
+                // BaseClass.VirtualMethod1!
 
                 // Why does bcRef1.VirtualMethod1 produce that output?  Which method is it calling, and why?
-                // YOUR ANSWER:
+                // YOUR ANSWER: It is calling the VirtualMethod1 method in BaseClass. Produces that output
+                // because it is executing the function and that is the output that it prints.
                 //
                 bcRef1.VirtualMethodTWO();
                 // What output does the prior line produce?  Paste it in here:
-                //
+                // BaseClass.VirtualMethodTWO!
 
                 // Why does bcRef1.VirtualMethodTWO produce that output?  Which method is it calling, and why?
                 // YOUR ANSWER:
-                //
+                // It is calling BaseClass method VirtualMethodTWO and is printing that method's contents.
 
                 Console.WriteLine("variables is of type BaseClass, object is of type DerrivedClassOne:");
                 bcRef2.VirtualMethod1();
                 // What output does the prior line produce?  Paste it in here:
-                //
+                // variables is of type BasaeClass, object is of type DerrivedClassOne:
+                // DerivedClass1.VirtualMethod1
+                // BaseClass.VirtualMethod1!
 
                 // Why does bcRef2.VirtualMethod1 produce that output?  Which method is it calling, and why?
                 // YOUR ANSWER:
-                //
+                // First it print DerivedClass1.VirtualMethod1 because it overrides VirtualMethod1 to say Derived.
+                // Then it calls the original base.VirtualMethod1 to print BaseClass.VirtualMethodTWO!
+
                 bcRef2.VirtualMethodTWO();
                 // What output does the prior line produce?  Paste it in here:
-                //
+                // BaseClass.VirtualMethodTWO!
 
                 // Why does bcRef2.VirtualMethodTWO produce that output?  Which method is it calling, and why?
                 // YOUR ANSWER:
-                //
+                // Calls VirtualMethodTWO in DerivedClassOne, VirtualMethodTWO is not defined, therefore it finds it
+                // in BaseClass and prints.
 
                 Console.WriteLine("variables is of type BaseClass, object is of type TheOtherDerrivedClass:");
                 bcRef3.VirtualMethod1();
                 // What output does the prior line produce?  Paste it in here:
-                //
+                // variables is of type BaseClass, object is of type TheOtherDerrivedClass
+                // BaseClass.VirtualMethod1!
 
                 // Why does bcRef3.VirtualMethod1 produce that output?  Which method is it calling, and why?
                 // YOUR ANSWER:
+                // Originally calls TheOtherDerivedClass. However, VirtualMethodTWO is not defined in that class,
+                // but because of polymorphism it finds it in the base class. Then the contents are printed.
+
                 //
                 bcRef3.VirtualMethodTWO();
                 // What output does the prior line produce?  Paste it in here:
-                //
+                // TheOtherDerrivedClass.VirtualMethodTWO
 
                 // Why does bcRef3.VirtualMethodTWO produce that output?  Which method is it calling, and why?
                 // YOUR ANSWER:
-                //
+                // Calls TheOtherDerivedClass VirtualMethodTWO, which is present in that class. The contents are then run
+                // and the print function executes.
             }
         }
         class BaseClass
