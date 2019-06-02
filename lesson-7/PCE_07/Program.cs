@@ -15,11 +15,11 @@ namespace PCE_StarterProject
             //Basic_Inheritance bi = new Basic_Inheritance();
             //bi.RunExercise();
 
-            Constructors_Calling_One_From_Another ccofa = new Constructors_Calling_One_From_Another();
-            ccofa.RunExercise();
+            //Constructors_Calling_One_From_Another ccofa = new Constructors_Calling_One_From_Another();
+            //ccofa.RunExercise();
 
-            // Calling_Methods_In_Base_Class cmibc = new Calling_Methods_In_Base_Class();
-            // cmibc.RunExercise();
+             Calling_Methods_In_Base_Class cmibc = new Calling_Methods_In_Base_Class();
+             cmibc.RunExercise();
 
             // Inheritance_Constructors ic = new Inheritance_Constructors();
             // ic.RunExercise();
@@ -350,7 +350,12 @@ namespace PCE_StarterProject
             }
             /////////////////////////////////////
             
-
+            public void Print()
+            {
+                Console.WriteLine("Base:");
+                Console.WriteLine("The price is: {0}", this.price);
+                Console.WriteLine("The weight is: {0}\n", this.weight);
+            }
         }
 
         // 1B. Create class (constructors)
@@ -372,6 +377,12 @@ namespace PCE_StarterProject
             {
                 return this.screenSize;
             }
+
+            public void PrintTV()
+            {
+                Console.WriteLine("Derived 1: TV");
+                Console.WriteLine("The screen size is: {0}", this.screenSize);
+            }
         }
 
         // 1C. Create class (constructors)
@@ -392,17 +403,102 @@ namespace PCE_StarterProject
             {
                 return this.cpuSpeed;
             }
+
+            public void PrintGameConsole()
+            {
+                Console.WriteLine("Derived 2: GameConsole");
+                Console.WriteLine("The CPU speed is: {0}", this.cpuSpeed);
+            }
         }
 
         ///////////////////////////////////////////////////////////////////////////////
 
 
-
+        ///////////////////////////////////////////////////////////////////////////////
+        // Start " Methods in the base class"
+        ///////////////////////////////////////////////////////////////////////////////
         class Calling_Methods_In_Base_Class
-        {
+        {            
             public void RunExercise()
             {
+                // Call derived class jetplane with 4 jet engines
+                JetPlane jet = new JetPlane(4);
+                jet.Print();
             }
+        }
+
+        // 1. Create Plane class
+        class Plane
+        {
+            protected int numberOfPassengers;
+            protected double luggageWeight;
+            
+            public Plane(int numberOfPassengers, double luggageWeight)
+            {
+                this.numberOfPassengers = numberOfPassengers;
+                this.luggageWeight = luggageWeight;
+            }
+            // Testing, not sure
+            public Plane(int numberOfJetEngines, int numberOfPassengers, double luggageWeight)
+            {
+                this.numberOfPassengers = numberOfPassengers;
+                this.luggageWeight = luggageWeight;
+                
+            }
+
+            public void getNumberOfPassengers(int numberOfPassengers)
+            {
+                this.numberOfPassengers = numberOfPassengers;
+            }
+            public int setNumberOfPassengers()
+            {
+                return this.numberOfPassengers;
+            }
+            public void getLuggageWeight(double luggageWeight)
+            {
+                this.luggageWeight = luggageWeight;
+            }
+            public double setLuggageWeight()
+            {
+                return this.luggageWeight;
+            }
+            public void Print()
+            {
+                Console.WriteLine("NumberPassengers:{0}", this.numberOfPassengers);
+                Console.WriteLine(String.Format("Weight:{0:0.00}", this.luggageWeight));
+            }
+        }
+
+        // 2. Create the JetPlane class
+        class JetPlane : Plane
+        {
+            //  2A. You should set up the “Set” methods on all of your classes so that they only update the private variables if
+            // the provided parameter is non-negative(unless it makes sense to have a negative number)
+            protected int numberOfJetEngines;
+            public JetPlane(int jet) : base(jet, 26, 2212.15534)
+            {
+                this.numberOfJetEngines = jet;
+            }
+            public void getNumberOfJetEngines(int numberOfJetEngines)
+            {
+                this.numberOfJetEngines = numberOfJetEngines;
+            }
+            public int setNumberOfJetEngines()
+            {
+                return this.numberOfJetEngines;
+            }
+
+            public new void Print()
+            {
+                base.Print(); // This will call the Plane.Print method
+                Console.WriteLine("NumEngines:{0}", this.numberOfJetEngines);
+            }
+            // 3. What new means = new creates objects, constraints and can invoke constructors. 
+            // New in the context of this method means that it's telling the program that this (new) Print is shadowing the base class print.
+            // The new keyword used this way allows a type to hide the members of base types, but only if you are using a variable of the type itself.
+
+            // 4. What happens when you leave out base = It will call the default constructor in the base class.
+            // This is only okay if there is already a constructor defined in the base class, otherwise there will be an error.
         }
 
         class Inheritance_Constructors
