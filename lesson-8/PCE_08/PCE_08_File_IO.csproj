@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39C80F52-3065-44E9-A5E8-A9EEFDEF8F4F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PCE_100</RootNamespace>
+    <AssemblyName>PCE_100</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\example.txt" />
+    <Content Include="Files\Exercise_Files\NumberJumble.txt" />
+    <Content Include="Files\Exercise_Files\SSA_Names_Empty.txt" />
+    <Content Include="Files\Exercise_Files\SSA_Names_Long.txt" />
+    <Content Include="Files\Exercise_Files\SSA_Names_Short.txt" />
+    <Content Include="Files\Exercise_Files\Words.txt" />
+    <Content Include="Files\Exercise_Files\_vti_cnf\NumberJumble.txt" />
+    <Content Include="Files\Exercise_Files\_vti_cnf\SSA_Names_Empty.txt" />
+    <Content Include="Files\Exercise_Files\_vti_cnf\SSA_Names_Long.txt" />
+    <Content Include="Files\Exercise_Files\_vti_cnf\SSA_Names_Short.txt" />
+    <Content Include="Files\Exercise_Files\_vti_cnf\Words.txt" />
+    <Content Include="Files\hours.txt" />
+    <Content Include="Files\numbers.txt" />
+    <Content Include="Files\numbers3.txt" />
+    <Content Include="Files\numbers4.txt" />
+    <Content Include="Files\Originally_From_Reges\numbers.txt" />
+    <Content Include="Files\Originally_From_Reges\numbers2.txt" />
+    <Content Include="Files\Originally_From_Reges\_vti_cnf\numbers.txt" />
+    <Content Include="Files\Originally_From_Reges\_vti_cnf\numbers2.txt" />
+    <Content Include="Files\poll.txt" />
+    <Content Include="Files\poll2.txt" />
+    <Content Include="Files\Unused_Files\Backup Copy Of example.txt" />
+    <Content Include="Files\Unused_Files\NumberList_Jumbled.txt" />
+    <Content Include="Files\Unused_Files\NumberList_LineByLine.txt" />
+    <Content Include="Files\Unused_Files\_vti_cnf\Backup Copy Of example.txt" />
+    <Content Include="Files\Unused_Files\_vti_cnf\NumberList_Jumbled.txt" />
+    <Content Include="Files\Unused_Files\_vti_cnf\NumberList_LineByLine.txt" />
+    <Content Include="Files\_vti_cnf\example.txt" />
+    <Content Include="Files\_vti_cnf\numbers.txt" />
+    <Content Include="Files\_vti_cnf\numbers2.txt" />
+    <Content Include="Files\_vti_cnf\numbers3.txt" />
+    <Content Include="Files\_vti_cnf\numbers4.txt" />
+    <Content Include="Files\_vti_cnf\poll.txt" />
+    <Content Include="Files\_vti_cnf\poll2.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
