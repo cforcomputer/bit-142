@@ -23,7 +23,7 @@ namespace MyDate_StudentWork
             //{
             //    this.Month = month;
             //}
-            
+
             //if (day <= this.daysInMonth())
             //{
             //    this.Day = day;
@@ -49,22 +49,22 @@ namespace MyDate_StudentWork
             {
                 this.Month = month;
             }
-           
+
             if (day >= 1 && day <= this.daysInMonth())
             {
                 this.Day = day;
-            }                
+            }
             else
             {
                 this.Day = 1;
-            }                
+            }
         }
 
         public string toString()
         {
             string returnMonth = this.Month.ToString();
             int returnDay = this.Day;
-            return returnMonth + "/" + returnDay;            
+            return returnMonth + "/" + returnDay;
         }
 
         public bool equals(int bDayMonth, int bDayDay)
@@ -111,14 +111,14 @@ namespace MyDate_StudentWork
             {
                 // reset month and day to 1 to start a new year
                 this.Month = 1;
-                this.Day = 1;               
-                
+                this.Day = 1;
+
             }
             else if (this.Day == this.daysInMonth())
             {
                 this.Month++;
-                this.Day = 1;                
-            }            
+                this.Day = 1;
+            }
             // else continue to increment Day to add on to the total number of days
             else
                 this.Day++;

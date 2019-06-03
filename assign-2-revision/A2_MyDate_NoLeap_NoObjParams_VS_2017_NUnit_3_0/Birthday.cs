@@ -9,7 +9,7 @@ namespace A3_Date
 {
     class Birthday
     {
-        
+
         // static MyDate dateCheck = new MyDate();
         static void Main(string[] args)
         {            
@@ -30,27 +30,31 @@ namespace A3_Date
             MyDate importer = new MyDate(todayMonth, todayDay);
             importer.setDate(todayMonth, todayDay);                     
             
-            MyDate dateImport = new MyDate();
-            dateImport.setDate(bDayMonth, bDayDay);
+            MyDate birthday = new MyDate();
+            birthday.setDate(bDayMonth, bDayDay);
                        
             // Print days in specific month
-            Console.WriteLine("There are {0} days in month #{1}", dateImport.daysInMonth(), dateImport.getMonth());
+            Console.WriteLine("There are {0} days in month #{1}", birthday.daysInMonth(), birthday.getMonth());
 
-            // int counterMonth = todayMonth;
-            // int counterDay = 0;
+            //int counterMonth = todayMonth;
+            int counterDay = 0;
 
             if (importer.equals(bDayMonth, bDayDay))
             {
                 Console.WriteLine("Happy Birthday!");
             }
             else
-            {
+            {   
+                while (!importer.equals(bDayMonth, bDayDay))
+                {
+                    importer.nextDay();
+                    counterDay += 1;
+                }             
 
                 
-                
-            }
-            // this jumps down to the 'TestMyDate' method, below:
-            TestMyDate();
+                Console.WriteLine("Number of days until birthday {0}: {1}", birthday.toString(), counterDay);
+            }            
+             TestMyDate(); // this jumps down to the 'TestMyDate' method, below:
         }
 
         public static void TestMyDate()
