@@ -13,7 +13,7 @@ namespace PCE_StarterProject
         static void Main(String[] args)
         {
             File_Exercises fe = new File_Exercises();
-            // fe.Average();
+            fe.Average();
             // fe.FindWord();
 
             //SSA name_searcher = new SSA();
@@ -45,7 +45,13 @@ namespace PCE_StarterProject
     {
         public void Average()
         {
+            StreamReader fileToRead = System.IO.File.OpenText(@"Files\Exercise_Files\NumberJumble.txt");
 
+            if ()
+            Console.WriteLine(fileToRead.ReadLine());
+            
+            // close the file being read
+            fileToRead.Dispose();
         }
 
         public void FindWord()
