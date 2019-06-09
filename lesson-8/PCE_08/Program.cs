@@ -45,17 +45,41 @@ namespace PCE_StarterProject
     {
         public void Average()
         {
-            StreamReader fileToRead = System.IO.File.OpenText(@"Files\Exercise_Files\NumberJumble.txt");
-
-            string line = fileToRead.ReadLine();
-            
-            while (line != null)
+            char[] delimiters = { ' ', '\t' }; // ignore tabs, ignore spaces
+            using (TextReader file = new StreamReader(@"Files\Exercise_Files\NumberJumble.txt"))
             {
-                Console.WriteLine(readLine);
+                int counter = 0;
+                double sum = 0.0;
+                string line;
+                bool numCheck = false;
+
+                line = file.ReadLine();
+                while (line != null)
+                {
+                    string[] tokensFromLine = line.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+
+                    foreach(string token in tokensFromLine) {
+                        
+                        double num;
+                        if (Double.TryParse(token, out num))
+                        {
+                            counter += 1;
+                            sum += num;
+                            numCheck = true;
+                            Console.WriteLine("counter = {0} \n sum = {1}", counter, sum);
+                        }
+                    }
+                    // Read the next line
+                    line = file.ReadLine();
+                }
+
+                if (!numCheck)
+                {
+                    Console.WriteLine("No numbers in the file!");
+                }
+                // close the file being read
+                Console.WriteLine("Average: {0}", sum/counter);
             }            
-            
-            // close the file being read
-            fileToRead.Dispose();
         }
 
         public void FindWord()
