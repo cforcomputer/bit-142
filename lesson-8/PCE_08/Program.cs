@@ -47,8 +47,12 @@ namespace PCE_StarterProject
         {
             StreamReader fileToRead = System.IO.File.OpenText(@"Files\Exercise_Files\NumberJumble.txt");
 
-            if ()
-            Console.WriteLine(fileToRead.ReadLine());
+            string line = fileToRead.ReadLine();
+            
+            while (line != null)
+            {
+                Console.WriteLine(readLine);
+            }            
             
             // close the file being read
             fileToRead.Dispose();
