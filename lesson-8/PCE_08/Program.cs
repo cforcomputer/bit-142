@@ -13,8 +13,8 @@ namespace PCE_StarterProject
         static void Main(String[] args)
         {
             File_Exercises fe = new File_Exercises();
-            fe.Average();
-            // fe.FindWord();
+            // fe.Average();
+            fe.FindWord();
 
             //SSA name_searcher = new SSA();
             //name_searcher.Search();
@@ -66,7 +66,7 @@ namespace PCE_StarterProject
                             counter += 1;
                             sum += num;
                             numCheck = true;
-                            Console.WriteLine("counter = {0} \n sum = {1}", counter, sum);
+                            // Console.WriteLine("counter = {0} \n sum = {1}", counter, sum);
                         }
                     }
                     // Read the next line
@@ -84,7 +84,29 @@ namespace PCE_StarterProject
 
         public void FindWord()
         {
+            using (TextReader file = new StreamReader(@"Files\Exercise_Files\Words.txt"))
+            {
+                Console.WriteLine("Hello! Type a word to search the text file.");
+                string input = Console.ReadLine();
+                string wordLine = file.ReadLine();
+                bool check = false;
 
+                while (wordLine != null)
+                {
+                    double num;
+
+                    if(wordLine.Equals(input, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        Console.WriteLine("{0} has been FOUND in the text file!", input);
+                        check = true;
+                    }                    
+                    wordLine = file.ReadLine();
+                }              
+                if (!check)
+                {
+                    Console.WriteLine("Sorry, the word you are looking for has not been found.");
+                }
+            }
         }
 
 		public void Output_Numbers()
