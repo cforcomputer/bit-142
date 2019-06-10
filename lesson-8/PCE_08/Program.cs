@@ -15,9 +15,10 @@ namespace PCE_StarterProject
             File_Exercises fe = new File_Exercises();
             // fe.Average();
             // fe.FindWord();
+            fe.Output_Numbers();
 
-            SSA name_searcher = new SSA();
-            name_searcher.Search();
+            // SSA name_searcher = new SSA();
+            // name_searcher.Search();
 
 
             SlideExamples_Input_LineByLine se = new SlideExamples_Input_LineByLine();
@@ -111,8 +112,27 @@ namespace PCE_StarterProject
 
 		public void Output_Numbers()
 		{
+            // collect numbers to print
+            Console.WriteLine("How many integers do you want to print?");
+            int numbersToPrint = Convert.ToInt32(Console.ReadLine());
 
-		}
+            // collect the first integer to start printing from
+            Console.WriteLine("What is the first integer that you want printed?");
+            int firstInt = Convert.ToInt32(Console.ReadLine());
+
+            // make a new streamwriter that writes to the newly created output file
+            using (StreamWriter file =
+            new StreamWriter(@"Files\Exercise_Files\output.txt"))
+            {
+                for (int i = 0; i < numbersToPrint; i++)
+                {
+                    file.Write(firstInt + " ");
+                    firstInt += 1;
+                }
+            }
+
+            Console.WriteLine("The program has successfully printed those numbers to the file!");
+        }
 
 		public void Output_Maxes()
 		{
