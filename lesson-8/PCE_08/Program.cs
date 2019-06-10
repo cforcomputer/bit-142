@@ -14,10 +14,10 @@ namespace PCE_StarterProject
         {
             File_Exercises fe = new File_Exercises();
             // fe.Average();
-            fe.FindWord();
+            // fe.FindWord();
 
-            //SSA name_searcher = new SSA();
-            //name_searcher.Search();
+            SSA name_searcher = new SSA();
+            name_searcher.Search();
 
 
             SlideExamples_Input_LineByLine se = new SlideExamples_Input_LineByLine();
@@ -119,6 +119,7 @@ namespace PCE_StarterProject
 		}
     }
 
+    // SSA Assignment
     public class SSA
     {
         public void Search()
@@ -130,8 +131,57 @@ namespace PCE_StarterProject
 
         public int[] Search(string targetName, string fileName)
         {
-            int[] nums = new int[10];
+            int[] nums = new int[12];
 
+            // ignore spaces, tabs
+            char[] delimiters = { ' ', '\t' };                       
+
+            // Open the file reader
+            using (TextReader t = new StreamReader(fileName))
+            {
+                string sLine = t.ReadLine();
+                bool check = false;
+
+                // while there is a new line do --> 
+                while (sLine != null && check == false)
+                {
+                    string[] tokens = sLine.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+                    // Console.WriteLine(sLine);
+
+                    int rank;
+                    for (int i = 0; i < tokens.Length; i++)
+                    {
+                        // Search for a name through matching string
+                        if (tokens[i].Equals(targetName, StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            Console.WriteLine("{0} was found!", targetName);
+                            check = true;                                                   
+                        }
+
+                        // Once the name is found, fill the num array with the next 11 values in line
+                        if (Int32.TryParse(tokens[i], out rank) && check == true)
+                        {
+                            // Add the rank to the array
+                            nums[i] = rank;                                                               
+                                                      
+                                                       
+                        }                        
+                    }                    
+                    sLine = t.ReadLine();
+                }
+                // if not found, write not found
+                if (check == false)
+                    Console.WriteLine("{0} was not found", targetName);                
+            }
+
+            // Print the year and score
+            int year = 1900;
+            for (int l = 0; l < 12; l++)
+            {
+                Console.WriteLine("Year Rank\n{0}\t{1}\n", year, nums[l]);
+                year += 10;
+            }
+            // return null if name not found 
             return nums;
         }
     }
