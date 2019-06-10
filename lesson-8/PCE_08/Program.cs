@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 namespace PCE_StarterProject
 {
@@ -15,7 +16,8 @@ namespace PCE_StarterProject
             File_Exercises fe = new File_Exercises();
             // fe.Average();
             // fe.FindWord();
-            fe.Output_Numbers();
+            // fe.Output_Numbers();
+            fe.Output_Maxes();
 
             // SSA name_searcher = new SSA();
             // name_searcher.Search();
@@ -94,8 +96,6 @@ namespace PCE_StarterProject
 
                 while (wordLine != null)
                 {
-                    double num;
-
                     if(wordLine.Equals(input, StringComparison.InvariantCultureIgnoreCase))
                     {
                         Console.WriteLine("{0} has been FOUND in the text file!", input);
@@ -134,9 +134,92 @@ namespace PCE_StarterProject
             Console.WriteLine("The program has successfully printed those numbers to the file!");
         }
 
-		public void Output_Maxes()
+        private int year;
+        public void Output_Maxes()
 		{
-		}
+            
+            int[] nums = new int[12];
+            
+            string[] names = new string[12];
+            // ignore spaces, tabs
+            char[] delimiters = { ' ', '\t' };
+            int counter = 0;
+            
+            // Open the file reader
+            using (TextReader t = new StreamReader(@"Files\Exercise_Files\SSA_Names_Short_Find_Max.txt"))
+            {
+                string sLine = t.ReadLine();
+
+                // while there is a new line do --> 
+                while (sLine != null)
+                {
+                    // make array of tokens with name at start
+                    string[] tokens = sLine.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+                    
+                    names[counter] = tokens[0];
+                    
+                    for (int i = 0; i < tokens.Length; i++)
+                    {
+                        // Once the name is found, fill the num array with the next 11 values in line
+                        if (Int32.TryParse(tokens[i], out int score))
+                        {
+                            // Add the rank to the array
+                            nums[i] = score;
+                        }
+                        //Console.WriteLine(nums[i]);
+                    }                    
+                    
+                    int maxIndex = nums.ToList().IndexOf(nums.Max());
+                    
+                    
+                    switch (maxIndex)
+                    {
+                        case 1:
+                            year = 1970;
+                            break;
+                        case 2:
+                            year = 1971;
+                            break;
+                        case 3:
+                            year = 1972;
+                            break;
+                        case 4:
+                            year = 1973;
+                            break;
+                        case 5:
+                            year = 1974;
+                            break;
+                        case 6:
+                            year = 1975;
+                            break;
+                        case 7:
+                            year = 1976;
+                            break;
+                        case 8:
+                            year = 1977;
+                            break;
+                        case 9:
+                            year = 1978;
+                            break;
+                        case 10:
+                            year = 1979;
+                            break;
+                        case 11:
+                            year = 1980;
+                            break;
+                        default:
+                            Console.WriteLine("something broke");
+                            break;
+                    }
+                    
+                    Console.Write("{0} {1}\n", names[counter], year);
+                    
+                    // read the next line
+                    sLine = t.ReadLine();
+                    counter++;
+                }
+            }        
+        }
     }
 
     // SSA Assignment
