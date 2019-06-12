@@ -28,26 +28,30 @@ namespace PCE_StarterProject
             // Measuring Linear Search //////////////////////////////////////////////////// 
             ///////////////////////////////////////////////////////////////////////////////
 
-            int[] array = new int[15];
+            //int[] array = new int[15];
 
-            foreach (int i in array)
-            {
-                array[i] = random.Next(1, 15);
-                Console.WriteLine(array[i]);
-            }
-            Console.WriteLine("\n\n");
+            //foreach (int i in array)
+            //{
+            //    array[i] = random.Next(1, 15);
+            //    Console.WriteLine(array[i]);
+            //}
+            //Console.WriteLine("\n\n");
 
             // testing for BubbleSort
-            SearchingAndSorting bubble = new SearchingAndSorting();
-            bubble.BubbleSort(array);
+            //SearchingAndSorting bubble = new SearchingAndSorting();
+            //bubble.BubbleSort(array);
             ///////////
             //int number;
 
             //SearchingAndSorting linsea = new SearchingAndSorting();
             //linsea.FindIntegerLinearPerfMeasured(7, array, out number);
-                        
-            //Console.WriteLine(number);
 
+            //Console.WriteLine(number);
+            //int[] arry = new int[0];
+            //int numsort;
+            //int numcomp;
+            //SearchingAndSorting bubsort = new SearchingAndSorting();
+            //bubsort.BubbleSortPerfMeasured(arry, out numsort, out numcomp);
             ///////////////////////////////////////////////////////////////////////////////
             ///////////////////////////////////////////////////////////////////////////////
 
@@ -343,7 +347,11 @@ public class QuickOverviewOfOutParameters
 		{
 			numSwaps = numComparisons = 0;
 
-            if (!(nums == null))
+            if (nums == null)
+            {
+                return;
+            }
+            if (nums.Length == 0)
             {
                 return;
             }
