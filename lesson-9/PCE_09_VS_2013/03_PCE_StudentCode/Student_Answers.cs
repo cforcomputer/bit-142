@@ -54,7 +54,26 @@ namespace PCE_StarterProject
 			qooop.OutParam(out num1);
 			Console.WriteLine("POST num1 is: {0}", num1); // notice that num1 HAS changed
 
-		}
+            // Test FindIntegerLinear
+            Random random = new Random();
+            int[] array = new int[15];
+
+            foreach (int i in array)
+            {
+                array[i] = random.Next(1, 8);
+            }
+            SearchingAndSorting linear = new SearchingAndSorting();
+            bool check =  linear.FindIntegerLinear(7, array);
+
+            if (check)
+            {
+                Console.WriteLine("The number is in the array");
+            } else
+            {
+                Console.WriteLine("The number is not in the array");
+            }
+            
+        }
 	}
 
 	public class Test_Print_Array
@@ -92,6 +111,7 @@ public class QuickOverviewOfOutParameters
 }
 
 	// This is now UNcommented, so it compiles ok as soon as you've downloaded it.
+    
 	public class SearchingAndSorting
 	{
 		// This is from a prior exercise.
@@ -102,9 +122,18 @@ public class QuickOverviewOfOutParameters
 			// Your code goes here.
 		}
 
-		public bool FindIntegerLinear(int target, int[] array)
+        // 1. Finding a number in an array - linear search
+        public bool FindIntegerLinear(int target, int[] array)
 		{
-			// Your code goes here.
+            // Your code goes here.
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == target)
+                {
+                    return true;
+                }
+            }
 			return false;
 		}
 
