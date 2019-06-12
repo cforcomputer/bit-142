@@ -32,14 +32,21 @@ namespace PCE_StarterProject
 
             foreach (int i in array)
             {
-                array[i] = random.Next(1, 8);
+                array[i] = random.Next(1, 15);
+                Console.WriteLine(array[i]);
             }
-            int number;
+            Console.WriteLine("\n\n");
 
-            SearchingAndSorting linsea = new SearchingAndSorting();
-            linsea.FindIntegerLinearPerfMeasured(7, array, out number);
+            // testing for BubbleSort
+            SearchingAndSorting bubble = new SearchingAndSorting();
+            bubble.BubbleSort(array);
+            ///////////
+            //int number;
+
+            //SearchingAndSorting linsea = new SearchingAndSorting();
+            //linsea.FindIntegerLinearPerfMeasured(7, array, out number);
                         
-            Console.WriteLine(number);
+            //Console.WriteLine(number);
 
             ///////////////////////////////////////////////////////////////////////////////
             ///////////////////////////////////////////////////////////////////////////////
@@ -47,16 +54,20 @@ namespace PCE_StarterProject
             ///////////////////////////////////////////////////////////////////////////////
             // Measuring Binary Search //////////////////////////////////////////////////// 
             ///////////////////////////////////////////////////////////////////////////////
-            int incre = 0; 
-            foreach (int i in array)
-            {
-                array[i] = incre++;
-                //Console.WriteLine(array[i]);
-            }
+            //int incre = 0; 
+            //foreach (int i in array)
+            //{
+            //    array[i] = incre++;
+            //    //Console.WriteLine(array[i]);
+            //}
 
-            SearchingAndSorting bina = new SearchingAndSorting();
-            bina.FindIntegerBinaryPerfMeasured(7, array, out incre);
-            Console.WriteLine(incre);
+            //SearchingAndSorting bina = new SearchingAndSorting();
+            //bina.FindIntegerBinaryPerfMeasured(7, array, out incre);
+            //Console.WriteLine(incre);
+
+            ///////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////
+            
             // Test_Print_Array tpa = new Test_Print_Array();
             // tpa.RunExercise();
 
@@ -299,6 +310,34 @@ public class QuickOverviewOfOutParameters
 
 		public void BubbleSort(int[] nums)
 		{
+            //for (int write = 0; write < nums.Length; write++)
+            //{
+            //    for (int t = 0; t < nums.Length + 1; t++)
+            //    {
+            //        if (nums[t] < nums[t - 1])
+            //        {
+            //            nums[t] = nums[t - 1];
+            //            Console.WriteLine(nums[t] + " " + nums[t - 1]);
+            //        }                    
+            //    }                
+            //}
+
+            int t = 0;
+
+            for (int write = 0; write < nums.Length; write++)
+            {
+                for (int sort = 0; sort < nums.Length - 1; sort++)
+                {
+                    if (nums[sort] > nums[sort + 1])
+                    {
+                        t = nums[sort + 1];
+                        nums[sort + 1] = nums[sort];
+                        nums[sort] = t;
+                        Console.WriteLine(nums[sort]);
+                        // Not sure why this always prints 0's
+                    }
+                }               
+            }            
 		}
 
 		public void BubbleSortPerfMeasured(int[] nums, out int numSwaps, out int numComparisons)
