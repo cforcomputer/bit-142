@@ -22,59 +22,86 @@ namespace PCE_StarterProject
 	{
 		static void Main(String[] args)
 		{
-			// Test_Print_Array tpa = new Test_Print_Array();
-			// tpa.RunExercise();
-
-			// Test_Find_Integer_Linear_Measured tfilm = new Test_Find_Integer_Linear_Measured();
-			// tfilm.measure();
-
-			// Test_Find_Integer_Binary_Measured tfibm = new Test_Find_Integer_Binary_Measured();
-			// tfibm.measure();
-			// tfibm.TestRecursiveBinarySearch();
-
-			// Test_BubbleSort_Measured tbm = new Test_BubbleSort_Measured();
-			// tbm.measure();
-
-			// Students: If you want to / have to put something
-			// into 'Main' for these PCEs, this is the place to put it :)
-
-			
-			// In the View -> Solution Explorer you can right-click on project 03,
-			// then select "Set As Startup Project" in order to run this code as
-			// a console application
-			QuickOverviewOfOutParameters qooop = new QuickOverviewOfOutParameters();
-			int num1 = 10;
-			Console.WriteLine("Normal Parameters: =============");
-			Console.WriteLine("PRE  num1 is: {0}", num1);
-			qooop.NormalParam(num1);
-			Console.WriteLine("POST num1 is: {0}", num1); // notice that num1 hasn't changed
-
-			Console.WriteLine("Out Parameters: ================");
-			Console.WriteLine("PRE  num1 is: {0}", num1);
-			qooop.OutParam(out num1);
-			Console.WriteLine("POST num1 is: {0}", num1); // notice that num1 HAS changed
-
-            // Test FindIntegerLinear
             Random random = new Random();
-            int[] array = new int[15];
+            // Test_Print_Array tpa = new Test_Print_Array();
+            // tpa.RunExercise();
 
-            foreach (int i in array)
+            // Test_Find_Integer_Linear_Measured tfilm = new Test_Find_Integer_Linear_Measured();
+            // tfilm.measure();
+
+            // Test_Find_Integer_Binary_Measured tfibm = new Test_Find_Integer_Binary_Measured();
+            // tfibm.measure();
+            // tfibm.TestRecursiveBinarySearch();
+
+            // Test_BubbleSort_Measured tbm = new Test_BubbleSort_Measured();
+            // tbm.measure();
+
+            // Students: If you want to / have to put something
+            // into 'Main' for these PCEs, this is the place to put it :)
+
+
+            // In the View -> Solution Explorer you can right-click on project 03,
+            // then select "Set As Startup Project" in order to run this code as
+            // a console application
+   //         QuickOverviewOfOutParameters qooop = new QuickOverviewOfOutParameters();
+			//int num1 = 10;
+			//Console.WriteLine("Normal Parameters: =============");
+			//Console.WriteLine("PRE  num1 is: {0}", num1);
+			//qooop.NormalParam(num1);
+			//Console.WriteLine("POST num1 is: {0}", num1); // notice that num1 hasn't changed
+
+			//Console.WriteLine("Out Parameters: ================");
+			//Console.WriteLine("PRE  num1 is: {0}", num1);
+			//qooop.OutParam(out num1);
+			//Console.WriteLine("POST num1 is: {0}", num1); // notice that num1 HAS changed
+
+            ///////////////////////////////////////////////////////////////////////////////
+            // Test FindIntegerLinear // 
+            ///////////////////////////////////////////////////////////////////////////////
+            
+            //int[] array = new int[15];
+
+            //foreach (int i in array)
+            //{
+            //    array[i] = random.Next(1, 8);
+            //}
+            //SearchingAndSorting linear = new SearchingAndSorting();
+            //bool check =  linear.FindIntegerLinear(7, array);
+
+            //if (check)
+            //{
+            //    Console.WriteLine("The number is in the array");
+            //} else
+            //{
+            //    Console.WriteLine("The number is not in the array");
+            //}
+            ///////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////
+
+            ///////////////////////////////////////////////////////////////////////////////
+            // Test Binary Search // 
+            ///////////////////////////////////////////////////////////////////////////////
+            int[] array2 = new int[10];
+            int yeet = 0;
+            foreach (int i in array2)
             {
-                array[i] = random.Next(1, 8);
+                array2[i] = yeet;
+                yeet++;
+                Console.WriteLine(array2[i]);
             }
-            SearchingAndSorting linear = new SearchingAndSorting();
-            bool check =  linear.FindIntegerLinear(7, array);
+            SearchingAndSorting binary = new SearchingAndSorting();
+            bool check2 = binary.FindIntegerBinary(7, array2);
 
-            if (check)
+            if (check2)
             {
-                Console.WriteLine("The number is in the array");
-            } else
+                Console.WriteLine("The number IS in the array");
+            }
+            else
             {
                 Console.WriteLine("The number is not in the array");
             }
-            
         }
-	}
+    }
 
 	public class Test_Print_Array
 	{
@@ -137,9 +164,33 @@ public class QuickOverviewOfOutParameters
 			return false;
 		}
 
-		public bool FindIntegerBinary(int target,
-					int[] array)
+		public bool FindIntegerBinary(int target, int[] array)
 		{
+            int max = array.Length - 1;
+            int min = 0;
+
+            while (min <= max)
+            {
+                int half = (min + max) / 2;
+
+                if (target == array[half])
+                {
+                    //Console.WriteLine("true check");
+                    return true;                    
+                }
+                else if (target < array[half])
+                {
+                    //Console.WriteLine("between min & half");
+                    max = half - 1;
+                    // go back to top of loop?
+                }
+                else
+                {
+                    //Console.WriteLine("between max & half");
+                    min = half + 1;
+                }
+            }
+            // return false if the value is not found
 			return false;
 		}
 
