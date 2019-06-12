@@ -322,17 +322,16 @@ public class QuickOverviewOfOutParameters
             //    }                
             //}
 
-            int t = 0;
+           
 
             for (int write = 0; write < nums.Length; write++)
             {
                 for (int sort = 0; sort < nums.Length - 1; sort++)
                 {
                     if (nums[sort] > nums[sort + 1])
-                    {
-                        t = nums[sort + 1];
+                    {                        
                         nums[sort + 1] = nums[sort];
-                        nums[sort] = t;
+                        
                         Console.WriteLine(nums[sort]);
                         // Not sure why this always prints 0's
                     }
@@ -343,7 +342,27 @@ public class QuickOverviewOfOutParameters
 		public void BubbleSortPerfMeasured(int[] nums, out int numSwaps, out int numComparisons)
 		{
 			numSwaps = numComparisons = 0;
-		}
+
+            if (!(nums == null))
+            {
+                return;
+            }
+
+            for (int write = 0; write < nums.Length; write++)
+                {
+                    for (int sort = 0; sort < nums.Length - 1; sort++)
+                    {                                    
+                        if (nums[sort] > nums[sort + 1])
+                        {
+                            nums[sort + 1] = nums[sort];
+
+                            Console.WriteLine(nums[sort]);
+                               // Not sure why this always prints 0's
+                    }
+                }
+            }
+            
+        }
 	}
 
 	public class Test_Find_Integer_Linear_Measured
