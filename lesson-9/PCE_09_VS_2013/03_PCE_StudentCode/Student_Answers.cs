@@ -23,6 +23,24 @@ namespace PCE_StarterProject
 		static void Main(String[] args)
 		{
             Random random = new Random();
+
+            ///////////////////////////////////////////////////////////////////////////////
+            // Measuring Linear Search //////////////////////////////////////////////////// 
+            ///////////////////////////////////////////////////////////////////////////////
+
+            int[] array = new int[15];
+
+            foreach (int i in array)
+            {
+                array[i] = random.Next(1, 8);
+            }
+            int number;
+
+            SearchingAndSorting linsea = new SearchingAndSorting();
+            linsea.FindIntegerLinearPerfMeasured(7, array, out number);
+                        
+            Console.WriteLine(number);
+            
             // Test_Print_Array tpa = new Test_Print_Array();
             // tpa.RunExercise();
 
@@ -43,28 +61,24 @@ namespace PCE_StarterProject
             // In the View -> Solution Explorer you can right-click on project 03,
             // then select "Set As Startup Project" in order to run this code as
             // a console application
-   //         QuickOverviewOfOutParameters qooop = new QuickOverviewOfOutParameters();
-			//int num1 = 10;
-			//Console.WriteLine("Normal Parameters: =============");
-			//Console.WriteLine("PRE  num1 is: {0}", num1);
-			//qooop.NormalParam(num1);
-			//Console.WriteLine("POST num1 is: {0}", num1); // notice that num1 hasn't changed
 
-			//Console.WriteLine("Out Parameters: ================");
-			//Console.WriteLine("PRE  num1 is: {0}", num1);
-			//qooop.OutParam(out num1);
-			//Console.WriteLine("POST num1 is: {0}", num1); // notice that num1 HAS changed
+            //QuickOverviewOfOutParameters qooop = new QuickOverviewOfOutParameters();
+            //int num1 = 10;
+            //Console.WriteLine("Normal Parameters: =============");
+            //Console.WriteLine("PRE  num1 is: {0}", num1);
+            //qooop.NormalParam(num1);
+            //Console.WriteLine("POST num1 is: {0}", num1); // notice that num1 hasn't changed
+
+            //Console.WriteLine("Out Parameters: ================");
+            //Console.WriteLine("PRE  num1 is: {0}", num1);
+            //qooop.OutParam(out num1);
+            //Console.WriteLine("POST num1 is: {0}", num1); // notice that num1 HAS changed
 
             ///////////////////////////////////////////////////////////////////////////////
-            // Test FindIntegerLinear // 
+            // Test FindIntegerLinear ///////////////////////////////////////////////////// 
             ///////////////////////////////////////////////////////////////////////////////
-            
-            //int[] array = new int[15];
 
-            //foreach (int i in array)
-            //{
-            //    array[i] = random.Next(1, 8);
-            //}
+
             //SearchingAndSorting linear = new SearchingAndSorting();
             //bool check =  linear.FindIntegerLinear(7, array);
 
@@ -81,25 +95,29 @@ namespace PCE_StarterProject
             ///////////////////////////////////////////////////////////////////////////////
             // Test Binary Search // 
             ///////////////////////////////////////////////////////////////////////////////
-            int[] array2 = new int[10];
-            int yeet = 0;
-            foreach (int i in array2)
-            {
-                array2[i] = yeet;
-                yeet++;
-                Console.WriteLine(array2[i]);
-            }
-            SearchingAndSorting binary = new SearchingAndSorting();
-            bool check2 = binary.FindIntegerBinary(7, array2);
+            //int[] array2 = new int[10];
+            //int yeet = 0;
+            //foreach (int i in array2)
+            //{
+            //    array2[i] = yeet;
+            //    yeet++;
+            //    Console.WriteLine(array2[i]);
+            //}
+            //SearchingAndSorting binary = new SearchingAndSorting();
+            //bool check2 = binary.FindIntegerBinary(7, array2);
 
-            if (check2)
-            {
-                Console.WriteLine("The number IS in the array");
-            }
-            else
-            {
-                Console.WriteLine("The number is not in the array");
-            }
+            //if (check2)
+            //{
+            //    Console.WriteLine("The number IS in the array");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The number is not in the array");
+            //}
+            ///////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////
+
+
         }
     }
 
@@ -210,11 +228,23 @@ public class QuickOverviewOfOutParameters
 			return false;
 		}
 
-		public bool FindIntegerLinearPerfMeasured(int target, int[] array, out int numComparisons)
+		public bool FindIntegerLinearPerfMeasured(int target, int[] array, out int numComparisons) // out = numComparisons
 		{
-			// Your code goes here.
-			numComparisons = 0;
-			return false;
+            // Your code goes here.
+            // initialize value to be 0
+            numComparisons = 0;
+            
+            for (int i = 0; i < array.Length; i++)
+            {
+                // each time compared, increase by 1
+                numComparisons++;
+                if (array[i] == target)
+                {
+                    return true;
+                }
+            }
+            
+            return false;
 		}
 
 		public bool FindIntegerBinaryPerfMeasured(int target,
