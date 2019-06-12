@@ -40,7 +40,23 @@ namespace PCE_StarterProject
             linsea.FindIntegerLinearPerfMeasured(7, array, out number);
                         
             Console.WriteLine(number);
-            
+
+            ///////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////
+
+            ///////////////////////////////////////////////////////////////////////////////
+            // Measuring Binary Search //////////////////////////////////////////////////// 
+            ///////////////////////////////////////////////////////////////////////////////
+            int incre = 0; 
+            foreach (int i in array)
+            {
+                array[i] = incre++;
+                //Console.WriteLine(array[i]);
+            }
+
+            SearchingAndSorting bina = new SearchingAndSorting();
+            bina.FindIntegerBinaryPerfMeasured(7, array, out incre);
+            Console.WriteLine(incre);
             // Test_Print_Array tpa = new Test_Print_Array();
             // tpa.RunExercise();
 
@@ -251,7 +267,34 @@ public class QuickOverviewOfOutParameters
 				int[] array, out int numComparisons)
 		{
 			numComparisons = 0;
-			return false;
+
+            int max = array.Length - 1;
+            int min = 0;
+
+            while (min <= max)
+            {
+                numComparisons++;
+                int half = (min + max) / 2;
+
+                if (target == array[half])
+                {
+                    //Console.WriteLine("true check");
+                    return true;
+                }
+                else if (target < array[half])
+                {
+                    //Console.WriteLine("between min & half");
+                    max = half - 1;
+                    // go back to top of loop?
+                }
+                else
+                {
+                    //Console.WriteLine("between max & half");
+                    min = half + 1;
+                }
+            }
+
+            return false;
 		}
 
 		public void BubbleSort(int[] nums)
